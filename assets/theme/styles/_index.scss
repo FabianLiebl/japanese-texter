@@ -1,0 +1,174 @@
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  body {
+    color: $color1;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+
+      header {
+        width: 100%;
+        background-color: $backgroundColorHeader;
+        padding: 20px;
+        border-bottom: 1px solid $color1;
+
+        h1 {
+          margin: 0;
+        }
+      }
+
+      .tag-filter-area {
+        background-color: $backgroundColorFilter;
+        width: 100%;
+        max-height: 20vh;
+        border-bottom: 1px solid $color1;
+
+        .tags {
+          margin: 0;
+          padding: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          min-height: 0;
+          transition: min-height .3s ease-in-out;
+
+          .tag {
+            list-style: none;
+            display: block;
+            width: 64px;
+            height: 64px;
+            flex: 0 0 64px;
+            border: 1px solid $color1;
+            padding: 5px 2px 2px 2px;
+            margin: 1px;
+            background-color: $backgroundColorTag;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            &:hover {
+              background-color: $backgroundColorTagHover;
+            }
+            &.active {
+              background-color: $backgroundColorTagActive;
+            }
+
+            .tag-icon {
+              width: 32px;
+              height: 32px;
+            }
+
+            .tag-name {
+              width: calc(100% - 4px);
+              position: absolute;
+              bottom: 2px;
+              left: 0;
+              overflow: hidden;
+              padding: 2px;
+              font-size: 12px;
+            }
+          }
+        }
+
+        &.dragging-tag {
+          .favorite-tags {
+            background-color: $backgroundColorFilterDropZone;
+            min-height: 30px;
+          }
+        }
+        &.dragging-favorite-tag {
+          .normal-tags {
+            background-color: $backgroundColorFilterDropZone;
+            min-height: 30px;
+          }
+        }
+      }
+
+      .letter-area {
+        background-color: $backgroundColorLetters;
+        width: 100%;
+        padding: 0 0 100px 0;
+
+        .letters {
+          margin: 0;
+          padding: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          min-height: 0;
+          transition: min-height .3s ease-in-out;
+
+          .letter {
+            list-style: none;
+            display: block;
+            width: 64px;
+            height: 64px;
+            flex: 0 0 64px;
+            border: 1px solid $color1;
+            padding: 2px;
+            margin: 1px;
+            background-color: $backgroundColorLetter;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            &:hover {
+              background-color: $backgroundColorLetterHover;
+            }
+            &.filtered-out {
+              display: none;
+            }
+
+            .symbol {
+              font-size: 30px;
+            }
+            .sound {
+              width: calc(100% - 4px);
+              position: absolute;
+              bottom: 2px;
+              left: 0;
+              overflow: hidden;
+              padding: 2px;
+              font-size: 12px;
+            }
+          }
+        }
+
+        &.dragging-letter {
+          .favorite-letters {
+            background-color: $backgroundColorLettersDropZone;
+            min-height: 30px;
+          }
+        }
+        &.dragging-favorite-letter {
+          .normal-letters {
+            background-color: $backgroundColorLettersDropZone;
+            min-height: 30px;
+          }
+        }
+      }
+
+      .output-area {
+        background-color: $backgroundColorOutputArea;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        height: 100px;
+        padding: 10px 10px 50px 10px;
+        border-top: 1px solid $color1;
+
+        .output-text-area {
+          width: calc(100% - 20px);
+          height: 100%;
+          resize: none;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

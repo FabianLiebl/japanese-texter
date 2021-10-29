@@ -1,0 +1,23 @@
+{% extends 'theme/base.html.twig' %}
+
+{% block main %}
+    <div class="tag-filter-area" data-filter-area>
+        <ul class="tags favorite-tags" data-favorite-tags>
+            {% include 'theme/default/_tags.html.twig' with { 'tags': favoriteTags } %}
+        </ul>
+        <ul class="tags normal-tags" data-tags>
+            {% include 'theme/default/_tags.html.twig' with { 'tags': tags } %}
+        </ul>
+    </div>
+    <div class="letter-area" data-letter-area>
+        <ul class="letters favorite-letters" data-favorite-letters>
+            {% include 'theme/default/_letters.html.twig' with { 'letters': favoriteLetters } %}
+        </ul>
+        <ul class="letters normal-letters" data-letters>
+            {% include 'theme/default/_letters.html.twig' with { 'letters': letters } %}
+        </ul>
+    </div>
+    <div class="output-area" data-output-area>
+        <textarea class="output-text-area" data-output-field></textarea>
+    </div>
+{% endblock %}

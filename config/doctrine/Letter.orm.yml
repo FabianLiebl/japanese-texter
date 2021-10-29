@@ -1,0 +1,30 @@
+App\Entity\Letter:
+    type: entity
+    table: app_letter
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        letter:
+            type: string
+            nullable: true
+        sound:
+            type: string
+            nullable: true
+        favorite:
+            type: boolean
+        position:
+            type: string
+            nullable: true
+
+    manyToMany:
+        tags:
+            targetEntity: App\Entity\Tag
+            inversedBy: tags
+
+    lifecycleCallbacks: {  }

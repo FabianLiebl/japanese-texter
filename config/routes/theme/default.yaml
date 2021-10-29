@@ -1,0 +1,24 @@
+app_default_index:
+    path: /
+    defaults:
+        _controller: App\Controller\DefaultController:indexAction
+
+app_default_favorite_tag:
+    path: /tag/favorite/{id}
+    defaults:
+        _controller: App\Controller\DefaultController:favoriteTag
+
+app_default_unfavorite_tag:
+    path: /tag/unfavorite/{id}
+    defaults:
+        _controller: App\Controller\DefaultController:unfavoriteTag
+
+app_default_favorite_letter:
+    path: /letter/favorite/{id}
+    defaults:
+        _controller: App\Controller\DefaultController:favoriteLetter
+
+app_default_unfavorite_letter:
+    path: /letter/unfavorite/{id}
+    defaults:
+        _controller: App\Controller\DefaultController:unfavoriteLetter

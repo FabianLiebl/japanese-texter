@@ -1,0 +1,102 @@
+app_tag_index:
+    options:
+        expose: true
+    path: /app/tag/index
+    methods: [GET]
+    defaults:
+        _controller: app.controller.tag:listAction
+        _sylius:
+            viewer:
+
+app_tag_create:
+    options:
+        expose: true
+    path: /app/tag/create
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.tag:createAction
+        _sylius:
+            redirect: app_tag_update
+            viewer:
+
+app_tag_update:
+    options:
+        expose: true
+    path: /app/tag/update/{id}
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.tag:updateAction
+        _sylius:
+            viewer:
+
+app_tag_data:
+    options:
+        expose: true
+    path: /app/tag/table
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.tag:listDataAction
+        _sylius:
+            paginate: 100
+            sortable: true
+            sorting:
+                position: asc
+            viewer:
+                position_property: position
+                columns:
+                    name:
+                        label: Name
+                        property: name
+                        width: 6
+                        type: text
+                    or_group:
+                        label: Or Group
+                        property: orGroup
+                        width: 6
+                        type: text
+
+
+app_tag_delete:
+    options:
+        expose: true
+    path: /app/tag/delete/{id}
+    methods: [ POST, DELETE ]
+    defaults:
+        _controller: app.controller.tag:deleteAction
+
+app_tag_batch:
+    options:
+        expose: true
+    path: /app/tag/batch
+    methods: [POST]
+    defaults:
+        _controller: app.controller.tag:batchAction
+        _sylius:
+            paginate: false
+            criteria:
+                id: $ids
+            batches:
+                delete:
+                    type: delete
+
+app_tag_preview:
+    options:
+        expose: true
+    path: /app/tag/preview
+    methods: [POST]
+    defaults:
+        _controller: app.controller.tag:previewAction
+        _sylius:
+            viewer:
+
+app_tag_auto_complete:
+    options:
+        expose: true
+    path: /app/tag/auto-complete
+    defaults:
+        _controller: enhavo_form.controller.auto_complete:searchAction
+        _config:
+            class: App\Entity\Tag
+            repository:
+                method: findByTerm
+            choice_label: name

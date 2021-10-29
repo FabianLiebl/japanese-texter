@@ -1,0 +1,27 @@
+parameters:
+    remote_backup_root: 'backups/'
+
+enhavo_backup:
+#    backups:
+#        default:
+#            sources:
+#                mysql:
+#                    type: mysql
+#                    url: '%env(DATABASE_URL)%'
+#            normalizer:
+#                type: zip
+#            storages:
+#                enhavo:
+#                    type: enhavo
+#                    max_age: '1 month'
+#                sftp:
+#                    type: sftp
+#                    host: '%env(BACKUP_REMOTE_HOST)%'
+#                    username: '%env(BACKUP_REMOTE_USER)%'
+#                    root: '%remote_backup_root%%env(BACKUP_REMOTE_DIR)%'
+#                    privateKey: '%env(BACKUP_REMOTE_PRIVATE_KEY)%'
+#                    max_age: '1 month'
+#                local:
+#                    type: local
+#                    target: var/enhavo-backup-local
+#                    max_age: '1 week'

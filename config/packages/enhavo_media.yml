@@ -1,0 +1,6 @@
+enhavo_media:
+    formats:
+        tag_icon:
+            type: image
+            width: 32
+            height: 32

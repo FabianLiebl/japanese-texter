@@ -1,0 +1,27 @@
+enhavo_app:
+    mailer:
+        defaults:
+            from: '%env(resolve:MAILER_FROM)%'
+            name: '%env(resolve:MAILER_NAME)%'
+            to: '%env(resolve:MAILER_TO)%'
+    menu:
+        dashboard:
+            type: dashboard
+        user:
+            type: user
+        letter:
+            type: base
+            label: Letter
+            icon: edit
+            route: app_letter_index
+        tag:
+            type: base
+            label: Tags
+            icon: bookmark
+            route: app_tag_index
+#        page:
+#            type: page
+#        navigation:
+#            type: navigation
+#        backup:
+#            type: backup

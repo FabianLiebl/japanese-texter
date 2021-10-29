@@ -1,0 +1,14 @@
+sylius_resource:
+    resources:
+        app.letter:
+            classes:
+                model: App\Entity\Letter
+                controller: Enhavo\Bundle\AppBundle\Controller\ResourceController
+                form: App\Form\LetterType
+                repository: App\Repository\LetterRepository
+        app.tag:
+            classes:
+                model: App\Entity\Tag
+                controller: Enhavo\Bundle\AppBundle\Controller\ResourceController
+                form: App\Form\TagType
+                repository: App\Repository\TagRepository

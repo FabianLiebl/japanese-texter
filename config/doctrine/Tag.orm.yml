@@ -1,0 +1,35 @@
+App\Entity\Tag:
+    type: entity
+    table: app_tag
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            nullable: true
+        orGroup:
+            type: string
+            nullable: true
+        favorite:
+            type: boolean
+        position:
+            type: integer
+            nullable: true
+
+    manyToOne:
+        icon:
+            targetEntity: Enhavo\Bundle\MediaBundle\Model\FileInterface
+            cascade: [ 'persist', 'refresh', 'remove' ]
+
+    manyToMany:
+        letters:
+            targetEntity: App\Entity\Letter
+            mappedBy: letters
+
+    lifecycleCallbacks: {  }

@@ -1,0 +1,101 @@
+app_letter_index:
+    options:
+        expose: true
+    path: /app/letter/index
+    methods: [GET]
+    defaults:
+        _controller: app.controller.letter:listAction
+        _sylius:
+            viewer:
+
+app_letter_create:
+    options:
+        expose: true
+    path: /app/letter/create
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.letter:createAction
+        _sylius:
+            redirect: app_letter_update
+            viewer:
+
+app_letter_update:
+    options:
+        expose: true
+    path: /app/letter/update/{id}
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.letter:updateAction
+        _sylius:
+            viewer:
+
+app_letter_data:
+    options:
+        expose: true
+    path: /app/letter/table
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.letter:tableAction
+        _sylius:
+            paginate: 100
+            sortable: true
+            sorting:
+                position: asc
+            viewer:
+                position_property: position
+                columns:
+                    letter:
+                        label: Letter
+                        property: letter
+                        width: 6
+                        type: text
+                    sound:
+                        label: Sound
+                        property: sound
+                        width: 6
+                        type: text
+
+app_letter_delete:
+    options:
+        expose: true
+    path: /app/letter/delete/{id}
+    methods: [ POST, DELETE ]
+    defaults:
+        _controller: app.controller.letter:deleteAction
+
+app_letter_batch:
+    options:
+        expose: true
+    path: /app/letter/batch
+    methods: [POST]
+    defaults:
+        _controller: app.controller.letter:batchAction
+        _sylius:
+            paginate: false
+            criteria:
+                id: $ids
+            batches:
+                delete:
+                    type: delete
+
+app_letter_preview:
+    options:
+        expose: true
+    path: /app/letter/preview
+    methods: [POST]
+    defaults:
+        _controller: app.controller.letter:previewAction
+        _sylius:
+            viewer:
+
+app_letter_auto_complete:
+    options:
+        expose: true
+    path: /app/letter/auto-complete
+    defaults:
+        _controller: enhavo_form.controller.auto_complete:searchAction
+        _config:
+            class: App\Entity\letter
+            repository:
+                method: findByTerm
+            choice_label: letter

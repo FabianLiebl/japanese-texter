@@ -1,0 +1,6 @@
+{% for tag in tags %}
+    <li class="tag" data-tag="{{ tag.id }}" data-or-group="{{ tag.orGroup }}" draggable="true">
+        {% if tag.icon %}<img class="tag-icon" src="{{ media_url(tag.icon, 'tag_icon') }}" alt="tag.name" />{% endif %}
+        <span class="tag-name">{{ tag.name }}</span>
+    </li>
+{% endfor %}
