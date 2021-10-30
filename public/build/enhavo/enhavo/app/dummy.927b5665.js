@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["enhavo/app/dummy"],{aLl2:function(n,p,o){var a;void 0===(a=function(n,p){}.apply(p,[o,p]))||(n.exports=a)}},[["aLl2","runtime"]]]);

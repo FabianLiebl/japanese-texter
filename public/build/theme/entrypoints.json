@@ -1,0 +1,14 @@
+{
+  "entrypoints": {
+    "base": {
+      "js": [
+        "/build/theme/runtime.js",
+        "/build/theme/0.js",
+        "/build/theme/base.js"
+      ],
+      "css": [
+        "/build/theme/base.css"
+      ]
+    }
+  }
+}

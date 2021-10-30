@@ -4,6 +4,7 @@ parameters:
 
 imports:
     - { resource: services/*.yaml }
+    - { resource: services/*.xml }
 
 services:
     _defaults:

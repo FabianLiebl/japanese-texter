@@ -3,12 +3,12 @@
 /.env.local.php
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
+#/public/bundles/
 /var/
 /vendor/
 
 /node_modules/
-/public/build/
+#/public/build/
 /public/js/
 npm-debug.log
 yarn-error.log

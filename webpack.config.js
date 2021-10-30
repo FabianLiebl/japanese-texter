@@ -25,6 +25,8 @@ EnhavoEncore.add(
     [ new AppThemePackage() ],
     Encore => {
         Encore
+            .enableSourceMaps(false)
+            .enableVersioning(false)
             .addEntry('base', './assets/theme/base')
     },
     config => {}
