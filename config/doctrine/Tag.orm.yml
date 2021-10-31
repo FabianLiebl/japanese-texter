@@ -30,6 +30,6 @@ App\Entity\Tag:
     manyToMany:
         letters:
             targetEntity: App\Entity\Letter
-            mappedBy: letters
+            mappedBy: tags
 
     lifecycleCallbacks: {  }

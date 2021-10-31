@@ -34,11 +34,11 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt_pbkdf
-  capistrano (~> 3.4.0)
+  capistrano (~> 3.4.1)
   capistrano-cachetool
   capistrano-symfony (~> 2.0.0)
   capistrano-yarn
   ed25519
 
 BUNDLED WITH
-   1.13.6
+   1.16.1

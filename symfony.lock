@@ -514,9 +514,6 @@
     "symfony/orm-pack": {
         "version": "v1.0.8"
     },
-    "symfony/polyfill-intl-grapheme": {
-        "version": "v1.23.1"
-    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.22.1"
     },
@@ -602,9 +599,6 @@
     },
     "symfony/stopwatch": {
         "version": "v4.4.20"
-    },
-    "symfony/string": {
-        "version": "v5.3.7"
     },
     "symfony/swiftmailer-bundle": {
         "version": "2.5",

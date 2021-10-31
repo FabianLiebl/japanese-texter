@@ -47,13 +47,20 @@ app_letter_data:
                     letter:
                         label: Letter
                         property: letter
-                        width: 6
+                        width: 2
                         type: text
                     sound:
                         label: Sound
                         property: sound
-                        width: 6
+                        width: 2
                         type: text
+                        condition: "desktop"
+                    tags:
+                        label: Tags
+                        property: tagNames
+                        width: 8
+                        type: text
+                        condition: "desktop"
 
 app_letter_delete:
     options:

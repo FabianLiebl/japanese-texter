@@ -140,4 +140,13 @@ class Letter implements ResourceInterface
         }
         return $result;
     }
+
+    public function getTagNames()
+    {
+        $result = [];
+        foreach($this->getTags() as $tag) {
+            $result []= $tag->getName();
+        }
+        return implode(', ', $result);
+    }
 }

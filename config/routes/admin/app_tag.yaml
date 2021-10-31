@@ -44,6 +44,13 @@ app_tag_data:
             viewer:
                 position_property: position
                 columns:
+                    icon:
+                        type: media
+                        label: Icon
+                        property: icon
+                        width: 1
+                        height: 24
+                        format: tag_icon
                     name:
                         label: Name
                         property: name
@@ -52,9 +59,9 @@ app_tag_data:
                     or_group:
                         label: Or Group
                         property: orGroup
-                        width: 6
+                        width: 5
                         type: text
-
+                        condition: "desktop"
 
 app_tag_delete:
     options:
