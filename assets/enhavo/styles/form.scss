@@ -6,12 +6,13 @@
         padding: 10px 0;
         label {
           position: relative;
-          padding-left: 32px;
+          padding-left: 40px;
           .tag-icon {
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
+            border: 1px solid #000;
           }
         }
       }

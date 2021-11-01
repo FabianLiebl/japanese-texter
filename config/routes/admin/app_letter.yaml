@@ -35,7 +35,7 @@ app_letter_data:
     path: /app/letter/table
     methods: [GET,POST]
     defaults:
-        _controller: app.controller.letter:tableAction
+        _controller: app.controller.letter:listDataAction
         _sylius:
             paginate: 100
             sortable: true

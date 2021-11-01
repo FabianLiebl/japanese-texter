@@ -1,1 +1,174 @@
-html,html body{padding:0;margin:0;width:100%}html body{color:#252525;overflow:hidden}html body .container{width:100%;height:100vh;position:relative}html body .container header{width:100%;background-color:#fff6ab;padding:20px;border-bottom:1px solid #252525}html body .container header h1{margin:0}html body .container .tag-filter-area{background-color:#e5f8ff;width:100%;max-height:20vh;border-bottom:1px solid #252525}html body .container .tag-filter-area .tags{margin:0;padding:10px;display:flex;flex-wrap:wrap;min-height:0;transition:min-height .3s ease-in-out}html body .container .tag-filter-area .tags .tag{list-style:none;display:block;width:64px;height:64px;flex:0 0 64px;border:1px solid #252525;padding:5px 2px 2px;margin:1px;background-color:#d0f5ff;text-align:center;position:relative;cursor:pointer}html body .container .tag-filter-area .tags .tag:hover{background-color:#a7e7ff}html body .container .tag-filter-area .tags .tag.active{background-color:#76dfff}html body .container .tag-filter-area .tags .tag .tag-icon{width:32px;height:32px}html body .container .tag-filter-area .tags .tag .tag-name{width:calc(100% - 4px);position:absolute;bottom:2px;left:0;overflow:hidden;padding:2px;font-size:12px}html body .container .tag-filter-area.dragging-favorite-tag .normal-tags,html body .container .tag-filter-area.dragging-tag .favorite-tags{background-color:#3eccff;min-height:30px}html body .container .letter-area{background-color:#e0ffe4;width:100%;padding:0 0 100px}html body .container .letter-area .letters{margin:0;padding:10px;display:flex;flex-wrap:wrap;min-height:0;transition:min-height .3s ease-in-out}html body .container .letter-area .letters .letter{list-style:none;display:block;width:64px;height:64px;flex:0 0 64px;border:1px solid #252525;padding:2px;margin:1px;background-color:#cfffd6;text-align:center;position:relative;cursor:pointer}html body .container .letter-area .letters .letter:hover{background-color:#abffb6}html body .container .letter-area .letters .letter.filtered-out{display:none}html body .container .letter-area .letters .letter .symbol{font-size:30px}html body .container .letter-area .letters .letter .sound{width:calc(100% - 4px);position:absolute;bottom:2px;left:0;overflow:hidden;padding:2px;font-size:12px}html body .container .letter-area.dragging-favorite-letter .normal-letters,html body .container .letter-area.dragging-letter .favorite-letters{background-color:#5eff72;min-height:30px}html body .container .output-area{background-color:#e0e6ff;width:100%;position:absolute;bottom:0;height:100px;padding:10px 10px 50px;border-top:1px solid #252525}html body .container .output-area .output-text-area{width:calc(100% - 20px);height:100%;resize:none;font-size:30px}
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+html body {
+  color: #252525;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+html body .container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+html body .container header {
+  width: 100%;
+  background-color: #fff6ab;
+  padding: 20px;
+  border-bottom: 1px solid #252525;
+}
+
+html body .container header h1 {
+  margin: 0;
+}
+
+html body .container .tag-filter-area {
+  background-color: #e5f8ff;
+  width: 100%;
+  max-height: 20vh;
+  border-bottom: 1px solid #252525;
+}
+
+html body .container .tag-filter-area .tags {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 0;
+  transition: min-height .3s ease-in-out;
+}
+
+html body .container .tag-filter-area .tags .tag {
+  list-style: none;
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border: 1px solid #252525;
+  padding: 5px 2px 2px 2px;
+  margin: 1px;
+  background-color: #d0f5ff;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+html body .container .tag-filter-area .tags .tag:hover {
+  background-color: #a7e7ff;
+}
+
+html body .container .tag-filter-area .tags .tag.active {
+  background-color: #76dfff;
+}
+
+html body .container .tag-filter-area .tags .tag .tag-icon {
+  width: 32px;
+  height: 32px;
+}
+
+html body .container .tag-filter-area .tags .tag .tag-name {
+  width: calc(100% - 4px);
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  overflow: hidden;
+  padding: 2px;
+  font-size: 12px;
+}
+
+html body .container .tag-filter-area.dragging-tag .favorite-tags {
+  background-color: #3eccff;
+  min-height: 30px;
+}
+
+html body .container .tag-filter-area.dragging-favorite-tag .normal-tags {
+  background-color: #3eccff;
+  min-height: 30px;
+}
+
+html body .container .letter-area {
+  background-color: #e0ffe4;
+  width: 100%;
+  padding: 0 0 100px 0;
+}
+
+html body .container .letter-area .letters {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 0;
+  transition: min-height .3s ease-in-out;
+}
+
+html body .container .letter-area .letters .letter {
+  list-style: none;
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border: 1px solid #252525;
+  padding: 2px;
+  margin: 1px;
+  background-color: #cfffd6;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+html body .container .letter-area .letters .letter:hover {
+  background-color: #abffb6;
+}
+
+html body .container .letter-area .letters .letter.filtered-out {
+  display: none;
+}
+
+html body .container .letter-area .letters .letter .symbol {
+  font-size: 30px;
+}
+
+html body .container .letter-area .letters .letter .sound {
+  width: calc(100% - 4px);
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  overflow: hidden;
+  padding: 2px;
+  font-size: 12px;
+}
+
+html body .container .letter-area.dragging-letter .favorite-letters {
+  background-color: #5eff72;
+  min-height: 30px;
+}
+
+html body .container .letter-area.dragging-favorite-letter .normal-letters {
+  background-color: #5eff72;
+  min-height: 30px;
+}
+
+html body .container .output-area {
+  background-color: #e0e6ff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  padding: 10px 10px 50px 10px;
+  border-top: 1px solid #252525;
+}
+
+html body .container .output-area .output-text-area {
+  width: calc(100% - 20px);
+  height: 100%;
+  resize: none;
+  font-size: 30px;
+}
+

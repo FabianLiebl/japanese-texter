@@ -1,1 +1,315 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["base"],{"4zVt":function(t,r,e){var a,i;a=[e,r,e("lTfz")],void 0===(i=function(t,r,e){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var a=function(){function t(){this.$currentlyDragged=null,this.textFieldCursorPosition=0,this.$filterArea=e("[data-filter-area]"),this.$letterArea=e("[data-letter-area]"),this.$dataOutputField=e("[data-output-field]"),this.initFavoriteTags(),this.initFavoriteLetters(),this.initLetterClick(),this.initFilter()}return t.prototype.initFavoriteTags=function(){var t=this,r=this;this.$filterArea.find("[data-favorite-tags]").find("[data-tag]").data("favorite",1),this.$filterArea.find("[data-tags]").find("[data-tag]").data("favorite",0),this.$filterArea.find("[data-tag]").on("dragstart",(function(){1==e(this).data("favorite")?r.$filterArea.addClass("dragging-favorite-tag"):r.$filterArea.addClass("dragging-tag"),r.$currentlyDragged=e(this)}));var a=this.$filterArea.find("[data-favorite-tags]");a.on("dragover",(function(t){return t.preventDefault(),!0})),a.on("drop dragdrop",(function(i){null!=r.$currentlyDragged&&r.$currentlyDragged.data("tag")&&(0==r.$currentlyDragged.data("favorite")&&(t.$currentlyDragged.appendTo(a),t.$currentlyDragged.data("favorite",1),e.ajax({url:"/tag/favorite/"+t.$currentlyDragged.data("tag")})),t.$currentlyDragged=null)}));var i=this.$filterArea.find("[data-tags]");i.on("dragover",(function(t){return t.preventDefault(),!0})),i.on("drop dragdrop",(function(a){null!=r.$currentlyDragged&&r.$currentlyDragged.data("tag")&&(1==r.$currentlyDragged.data("favorite")&&(t.$currentlyDragged.appendTo(i),t.$currentlyDragged.data("favorite",0),e.ajax({url:"/tag/unfavorite/"+t.$currentlyDragged.data("tag")})),t.$currentlyDragged=null)})),e(document).on("dragend",(function(){t.$filterArea.removeClass("dragging-favorite-tag").removeClass("dragging-tag"),t.$currentlyDragged=null}))},t.prototype.initFavoriteLetters=function(){var t=this,r=this;this.$letterArea.find("[data-favorite-letters]").find("[data-letter]").data("favorite",1),this.$letterArea.find("[data-letters]").find("[data-letter]").data("favorite",0),this.$letterArea.find("[data-letter]").on("dragstart",(function(){1==e(this).data("favorite")?r.$letterArea.addClass("dragging-favorite-letter"):r.$letterArea.addClass("dragging-letter"),r.$currentlyDragged=e(this)}));var a=this.$letterArea.find("[data-favorite-letters]");a.on("dragover",(function(t){return t.preventDefault(),!0})),a.on("drop dragdrop",(function(i){null!=r.$currentlyDragged&&r.$currentlyDragged.data("letter")&&(0==r.$currentlyDragged.data("favorite")&&(t.$currentlyDragged.appendTo(a),t.$currentlyDragged.data("favorite",1),e.ajax({url:"/letter/favorite/"+t.$currentlyDragged.data("letter")})),t.$currentlyDragged=null)}));var i=this.$letterArea.find("[data-letters]");i.on("dragover",(function(t){return t.preventDefault(),!0})),i.on("drop dragdrop",(function(a){null!=r.$currentlyDragged&&r.$currentlyDragged.data("letter")&&(1==r.$currentlyDragged.data("favorite")&&(t.$currentlyDragged.appendTo(i),t.$currentlyDragged.data("favorite",0),e.ajax({url:"/letter/unfavorite/"+t.$currentlyDragged.data("letter")})),t.$currentlyDragged=null)})),e(document).on("dragend",(function(){t.$letterArea.removeClass("dragging-favorite-letter").removeClass("dragging-letter"),t.$currentlyDragged=null}))},t.prototype.initLetterClick=function(){var t=this,r=this;r.$dataOutputField.on("click keyup",(function(){t.textFieldCursorPosition=r.$dataOutputField.prop("selectionStart"),console.log(t.textFieldCursorPosition)})),this.$letterArea.find("[data-letter]").on("click",(function(){var t=r.$dataOutputField.val(),a=t.substring(0,r.textFieldCursorPosition)+e(this).find("[data-letter-symbol]").html()+t.substring(r.textFieldCursorPosition,t.length);r.$dataOutputField.val(a),r.textFieldCursorPosition++,r.$dataOutputField.prop("selectionStart",r.textFieldCursorPosition),r.$dataOutputField.prop("selectionEnd",r.textFieldCursorPosition),r.$dataOutputField.trigger("focus")}))},t.prototype.initFilter=function(){var t=this;this.$filterArea.find("[data-tag]").on("click",(function(){e(this).toggleClass("active"),t.updateFilters()}))},t.prototype.updateFilters=function(){var t=[],r=[];this.$filterArea.find("[data-tag].active").each((function(){var a=e(this).data("or-group");if(a){for(var n=0,d=t;n<d.length;n++){var l=d[n];if(l.name==a)return void l.filters.push(e(this).data("tag"))}var o=new i(a);o.filters.push(e(this).data("tag")),t.push(o)}else r.push(e(this).data("tag"))})),this.$letterArea.find("[data-letter]").each((function(){for(var a=e(this).data("tags"),i=0,n=r;i<n.length;i++){var d=n[i];if(!a.hasOwnProperty(d))return void e(this).addClass("filtered-out")}for(var l=0,o=t;l<o.length;l++){for(var u=!1,g=0,s=o[l].filters;g<s.length;g++){d=s[g];if(a.hasOwnProperty(d)){u=!0;break}}if(!u)return void e(this).addClass("filtered-out")}e(this).removeClass("filtered-out")}))},t}();r.default=a;var i=function(t){this.name=t,this.filters=[]}}.apply(r,a))||(t.exports=i)},"9Zxs":function(t,r,e){},"F/ys":function(t,r,e){var a,i;a=[e,r,e("4zVt"),e("9Zxs")],void 0===(i=function(t,r,e){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),new e.default}.apply(r,a))||(t.exports=i)}},[["F/ys","runtime",0]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["base"],{
+
+/***/ "./assets/theme/base.ts":
+/*!******************************!*\
+  !*** ./assets/theme/base.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! ./javascript/Application */ "./assets/theme/javascript/Application.ts"), __webpack_require__(/*! ./styles/base.scss */ "./assets/theme/styles/base.scss")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, Application_1) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  new Application_1["default"]();
+}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+/***/ }),
+
+/***/ "./assets/theme/javascript/Application.ts":
+/*!************************************************!*\
+  !*** ./assets/theme/javascript/Application.ts ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, $) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var Application =
+  /** @class */
+  function () {
+    function Application() {
+      this.$currentlyDragged = null;
+      this.textFieldCursorPosition = 0;
+      this.$filterArea = $('[data-filter-area]');
+      this.$letterArea = $('[data-letter-area]');
+      this.$dataOutputField = $('[data-output-field]');
+      this.initFavoriteTags();
+      this.initFavoriteLetters();
+      this.initLetterClick();
+      this.initFilter();
+    }
+
+    Application.prototype.initFavoriteTags = function () {
+      var _this = this;
+
+      var self = this;
+      this.$filterArea.find('[data-favorite-tags]').find('[data-tag]').data('favorite', 1);
+      this.$filterArea.find('[data-tags]').find('[data-tag]').data('favorite', 0);
+      this.$filterArea.find('[data-tag]').on('dragstart', function () {
+        if ($(this).data('favorite') == 1) {
+          self.$filterArea.addClass('dragging-favorite-tag');
+        } else {
+          self.$filterArea.addClass('dragging-tag');
+        }
+
+        self.$currentlyDragged = $(this);
+      });
+      var $favoriteTags = this.$filterArea.find('[data-favorite-tags]');
+      $favoriteTags.on('dragover', function (event) {
+        event.preventDefault();
+        return true;
+      });
+      $favoriteTags.on('drop dragdrop', function (event) {
+        if (self.$currentlyDragged == null) {
+          return;
+        }
+
+        if (!self.$currentlyDragged.data('tag')) {
+          return;
+        }
+
+        if (self.$currentlyDragged.data('favorite') == 0) {
+          _this.$currentlyDragged.appendTo($favoriteTags);
+
+          _this.$currentlyDragged.data('favorite', 1);
+
+          $.ajax({
+            url: '/tag/favorite/' + _this.$currentlyDragged.data('tag')
+          });
+        }
+
+        _this.$currentlyDragged = null;
+      });
+      var $normalTags = this.$filterArea.find('[data-tags]');
+      $normalTags.on('dragover', function (event) {
+        event.preventDefault();
+        return true;
+      });
+      $normalTags.on('drop dragdrop', function (event) {
+        if (self.$currentlyDragged == null) {
+          return;
+        }
+
+        if (!self.$currentlyDragged.data('tag')) {
+          return;
+        }
+
+        if (self.$currentlyDragged.data('favorite') == 1) {
+          _this.$currentlyDragged.appendTo($normalTags);
+
+          _this.$currentlyDragged.data('favorite', 0);
+
+          $.ajax({
+            url: '/tag/unfavorite/' + _this.$currentlyDragged.data('tag')
+          });
+        }
+
+        _this.$currentlyDragged = null;
+      });
+      $(document).on('dragend', function () {
+        _this.$filterArea.removeClass('dragging-favorite-tag').removeClass('dragging-tag');
+
+        _this.$currentlyDragged = null;
+      });
+    };
+
+    Application.prototype.initFavoriteLetters = function () {
+      var _this = this;
+
+      var self = this;
+      this.$letterArea.find('[data-favorite-letters]').find('[data-letter]').data('favorite', 1);
+      this.$letterArea.find('[data-letters]').find('[data-letter]').data('favorite', 0);
+      this.$letterArea.find('[data-letter]').on('dragstart', function () {
+        if ($(this).data('favorite') == 1) {
+          self.$letterArea.addClass('dragging-favorite-letter');
+        } else {
+          self.$letterArea.addClass('dragging-letter');
+        }
+
+        self.$currentlyDragged = $(this);
+      });
+      var $favoriteLetters = this.$letterArea.find('[data-favorite-letters]');
+      $favoriteLetters.on('dragover', function (event) {
+        event.preventDefault();
+        return true;
+      });
+      $favoriteLetters.on('drop dragdrop', function (event) {
+        if (self.$currentlyDragged == null) {
+          return;
+        }
+
+        if (!self.$currentlyDragged.data('letter')) {
+          return;
+        }
+
+        if (self.$currentlyDragged.data('favorite') == 0) {
+          _this.$currentlyDragged.appendTo($favoriteLetters);
+
+          _this.$currentlyDragged.data('favorite', 1);
+
+          $.ajax({
+            url: '/letter/favorite/' + _this.$currentlyDragged.data('letter')
+          });
+        }
+
+        _this.$currentlyDragged = null;
+      });
+      var $normalLetters = this.$letterArea.find('[data-letters]');
+      $normalLetters.on('dragover', function (event) {
+        event.preventDefault();
+        return true;
+      });
+      $normalLetters.on('drop dragdrop', function (event) {
+        if (self.$currentlyDragged == null) {
+          return;
+        }
+
+        if (!self.$currentlyDragged.data('letter')) {
+          return;
+        }
+
+        if (self.$currentlyDragged.data('favorite') == 1) {
+          _this.$currentlyDragged.appendTo($normalLetters);
+
+          _this.$currentlyDragged.data('favorite', 0);
+
+          $.ajax({
+            url: '/letter/unfavorite/' + _this.$currentlyDragged.data('letter')
+          });
+        }
+
+        _this.$currentlyDragged = null;
+      });
+      $(document).on('dragend', function () {
+        _this.$letterArea.removeClass('dragging-favorite-letter').removeClass('dragging-letter');
+
+        _this.$currentlyDragged = null;
+      });
+    };
+
+    Application.prototype.initLetterClick = function () {
+      var _this = this;
+
+      var self = this;
+      self.$dataOutputField.on('click keyup', function () {
+        _this.textFieldCursorPosition = self.$dataOutputField.prop('selectionStart');
+        console.log(_this.textFieldCursorPosition);
+      });
+      this.$letterArea.find('[data-letter]').on('click', function () {
+        var currentText = self.$dataOutputField.val();
+        var newText = currentText.substring(0, self.textFieldCursorPosition) + $(this).find('[data-letter-symbol]').html() + currentText.substring(self.textFieldCursorPosition, currentText.length);
+        self.$dataOutputField.val(newText);
+        self.textFieldCursorPosition++;
+        self.$dataOutputField.prop('selectionStart', self.textFieldCursorPosition);
+        self.$dataOutputField.prop('selectionEnd', self.textFieldCursorPosition);
+        self.$dataOutputField.trigger('focus');
+      });
+    };
+
+    Application.prototype.initFilter = function () {
+      var self = this;
+      this.$filterArea.find('[data-tag]').on('click', function () {
+        $(this).toggleClass('active');
+        self.updateFilters();
+      });
+    };
+
+    Application.prototype.updateFilters = function () {
+      var activeFilterOrGroups = [];
+      var activeFiltersWithoutOrGroup = [];
+      this.$filterArea.find('[data-tag].active').each(function () {
+        var orGroupName = $(this).data('or-group');
+
+        if (orGroupName) {
+          for (var _i = 0, activeFilterOrGroups_1 = activeFilterOrGroups; _i < activeFilterOrGroups_1.length; _i++) {
+            var orGroup = activeFilterOrGroups_1[_i];
+
+            if (orGroup.name == orGroupName) {
+              orGroup.filters.push($(this).data('tag'));
+              return;
+            }
+          }
+
+          var newOrGroup = new OrGroup(orGroupName);
+          newOrGroup.filters.push($(this).data('tag'));
+          activeFilterOrGroups.push(newOrGroup);
+        } else {
+          activeFiltersWithoutOrGroup.push($(this).data('tag'));
+        }
+      });
+      this.$letterArea.find('[data-letter]').each(function () {
+        var ownTags = $(this).data('tags');
+
+        for (var _i = 0, activeFiltersWithoutOrGroup_1 = activeFiltersWithoutOrGroup; _i < activeFiltersWithoutOrGroup_1.length; _i++) {
+          var filter = activeFiltersWithoutOrGroup_1[_i];
+
+          if (!ownTags.hasOwnProperty(filter)) {
+            $(this).addClass('filtered-out');
+            return;
+          }
+        }
+
+        for (var _a = 0, activeFilterOrGroups_2 = activeFilterOrGroups; _a < activeFilterOrGroups_2.length; _a++) {
+          var orGroup = activeFilterOrGroups_2[_a];
+          var hasOne = false;
+
+          for (var _b = 0, _c = orGroup.filters; _b < _c.length; _b++) {
+            var filter = _c[_b];
+
+            if (ownTags.hasOwnProperty(filter)) {
+              hasOne = true;
+              break;
+            }
+          }
+
+          if (!hasOne) {
+            $(this).addClass('filtered-out');
+            return;
+          }
+        }
+
+        $(this).removeClass('filtered-out');
+      });
+    };
+
+    return Application;
+  }();
+
+  exports["default"] = Application;
+
+  var OrGroup =
+  /** @class */
+  function () {
+    function OrGroup(name) {
+      this.name = name;
+      this.filters = [];
+    }
+
+    return OrGroup;
+  }();
+}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+/***/ }),
+
+/***/ "./assets/theme/styles/base.scss":
+/*!***************************************!*\
+  !*** ./assets/theme/styles/base.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ })
+
+},[["./assets/theme/base.ts","runtime","vendors~base"]]]);
