@@ -19,7 +19,7 @@ App\Entity\Letter:
         favorite:
             type: boolean
         position:
-            type: string
+            type: integer
             nullable: true
 
     manyToMany:
