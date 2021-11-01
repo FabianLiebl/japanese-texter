@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Letter;
 use App\Entity\Tag;
-use Enhavo\Bundle\FormBundle\Form\Type\AutoCompleteEntityType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,12 +24,8 @@ class LetterType extends AbstractType
             'required' => false
         ]);
 
-        $builder->add('tags', AutoCompleteEntityType::class, [
+        $builder->add('tags', TagEntityType::class, [
             'label' => 'Tags',
-            'class' => Tag::class,
-            'route' => 'app_tag_auto_complete',
-            'choice_label' => 'name',
-            'multiple' => true,
             'required' => false
         ]);
     }

@@ -25,3 +25,5 @@ enhavo_app:
 #            type: navigation
 #        backup:
 #            type: backup
+    form_themes:
+        - 'admin/form/fields.html.twig'

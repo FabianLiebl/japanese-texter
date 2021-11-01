@@ -1,0 +1,20 @@
+.form-row {
+  .tag-entity-type {
+    .choice-input-container {
+      .choice-input-with-label {
+        display: block;
+        padding: 10px 0;
+        label {
+          position: relative;
+          padding-left: 32px;
+          .tag-icon {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}

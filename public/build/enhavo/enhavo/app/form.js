@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["enhavo/app/form"],{
 
-/***/ "./node_modules/@enhavo/app/entrypoint/form.ts":
-/*!*****************************************************!*\
-  !*** ./node_modules/@enhavo/app/entrypoint/form.ts ***!
-  \*****************************************************/
+/***/ "./assets/enhavo/entrypoint/form.ts":
+/*!******************************************!*\
+  !*** ./assets/enhavo/entrypoint/form.ts ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -150,7 +150,7 @@ var __generator = this && this.__generator || function (thisArg, body) {
   }
 };
 
-!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! @enhavo/dependency-injection */ "./node_modules/@enhavo/dependency-injection/index.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, dependency_injection_1) {
+!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! @enhavo/dependency-injection */ "./node_modules/@enhavo/dependency-injection/index.js"), __webpack_require__(/*! ../styles/form.scss */ "./assets/enhavo/styles/form.scss")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, dependency_injection_1) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -202,7 +202,18 @@ var __generator = this && this.__generator || function (thisArg, body) {
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
+/***/ }),
+
+/***/ "./assets/enhavo/styles/form.scss":
+/*!****************************************!*\
+  !*** ./assets/enhavo/styles/form.scss ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
 /***/ })
 
-},[["./node_modules/@enhavo/app/entrypoint/form.ts","runtime","vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85"]]]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9ub2RlX21vZHVsZXMvQGVuaGF2by9hcHAvZW50cnlwb2ludC9mb3JtLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUVBLEdBQUM7QUFBQTs7Ozs7O0FBQ0c7QUFBQTtBQUFBLGNBQU0sa0NBQVUsSUFBVixFQUFOOzs7QUFBQTs7QUFDQztBQUFBO0FBQUEsY0FBTSxrQ0FBVSxHQUFWLENBQWMsMEJBQWQsQ0FBTjs7O0FBQUEscUJBQUQsQ0FBa0QsSUFBbEQ7O0FBQ0M7QUFBQTtBQUFBLGNBQU0sa0NBQVUsR0FBVixDQUFjLHdCQUFkLENBQU47OztBQUFELHVCQUFDLFNBQUQsRUFBZ0QsSUFBaEQ7a0JBQXFELEs7QUFBTztBQUFBO0FBQUEsY0FBTSxrQ0FBVSxHQUFWLENBQWMsK0NBQWQsQ0FBTjs7O0FBQTVELG9DQUE0RCxTQUE1RDs7Ozs7OztLQUhIO0FBSUEsR0FKRCIsImZpbGUiOiJlbmhhdm8vYXBwL2Zvcm0uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQ29udGFpbmVyIGZyb20gXCJAZW5oYXZvL2RlcGVuZGVuY3ktaW5qZWN0aW9uXCJcblxuKGFzeW5jICgpID0+IHtcbiAgICBhd2FpdCBDb250YWluZXIuaW5pdCgpO1xuICAgIChhd2FpdCBDb250YWluZXIuZ2V0KCdAZW5oYXZvL2FwcC9mb3JtL0Zvcm1BcHAnKSkuaW5pdCgpO1xuICAgIChhd2FpdCBDb250YWluZXIuZ2V0KCdAZW5oYXZvL2FwcC92dWUvVnVlQXBwJykpLmluaXQoJ2FwcCcsIGF3YWl0IENvbnRhaW5lci5nZXQoJ0Blbmhhdm8vYXBwL2Zvcm0vY29tcG9uZW50cy9Gb3JtQ29tcG9uZW50LnZ1ZScpKTtcbn0pKCk7XG4iXSwic291cmNlUm9vdCI6IiJ9
+},[["./assets/enhavo/entrypoint/form.ts","runtime","vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85"]]]);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvZW5oYXZvL2VudHJ5cG9pbnQvZm9ybS50cyIsIndlYnBhY2s6Ly8vLi9hc3NldHMvZW5oYXZvL3N0eWxlcy9mb3JtLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBR0EsR0FBQztBQUFBOzs7Ozs7QUFDRztBQUFBO0FBQUEsY0FBTSxrQ0FBVSxJQUFWLEVBQU47OztBQUFBOztBQUNDO0FBQUE7QUFBQSxjQUFNLGtDQUFVLEdBQVYsQ0FBYywwQkFBZCxDQUFOOzs7QUFBQSxxQkFBRCxDQUFrRCxJQUFsRDs7QUFDQztBQUFBO0FBQUEsY0FBTSxrQ0FBVSxHQUFWLENBQWMsd0JBQWQsQ0FBTjs7O0FBQUQsdUJBQUMsU0FBRCxFQUFnRCxJQUFoRDtrQkFBcUQsSztBQUFPO0FBQUE7QUFBQSxjQUFNLGtDQUFVLEdBQVYsQ0FBYywrQ0FBZCxDQUFOOzs7QUFBNUQsb0NBQTRELFNBQTVEOzs7Ozs7O0tBSEg7QUFJQSxHQUpEOzs7Ozs7Ozs7Ozs7O0FDSEEsdUMiLCJmaWxlIjoiZW5oYXZvL2FwcC9mb3JtLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IENvbnRhaW5lciBmcm9tIFwiQGVuaGF2by9kZXBlbmRlbmN5LWluamVjdGlvblwiXG5pbXBvcnQgJy4uL3N0eWxlcy9mb3JtLnNjc3MnO1xuXG4oYXN5bmMgKCkgPT4ge1xuICAgIGF3YWl0IENvbnRhaW5lci5pbml0KCk7XG4gICAgKGF3YWl0IENvbnRhaW5lci5nZXQoJ0Blbmhhdm8vYXBwL2Zvcm0vRm9ybUFwcCcpKS5pbml0KCk7XG4gICAgKGF3YWl0IENvbnRhaW5lci5nZXQoJ0Blbmhhdm8vYXBwL3Z1ZS9WdWVBcHAnKSkuaW5pdCgnYXBwJywgYXdhaXQgQ29udGFpbmVyLmdldCgnQGVuaGF2by9hcHAvZm9ybS9jb21wb25lbnRzL0Zvcm1Db21wb25lbnQudnVlJykpO1xufSkoKTtcbiIsIi8vIGV4dHJhY3RlZCBieSBtaW5pLWNzcy1leHRyYWN0LXBsdWdpbiJdLCJzb3VyY2VSb290IjoiIn0=

@@ -1,0 +1,17 @@
+{% block tag_entity_widget -%}
+    <div class="tag-entity-type">
+        <div class="choice-input-container" {{ block('widget_container_attributes') }}>
+            {%- for child in form %}
+                <span class="choice-input-with-label">
+                    {{- form_widget(child) -}}
+                    <label for="{{ child.vars.id }}">
+                        {% if iconList[child.vars.value] %}
+                            <img class="tag-icon" src="{{ media_url(iconList[child.vars.value], 'tag_icon') }}">
+                        {% endif %}
+                        {{ child.vars.label }}
+                    </label>
+                </span>
+            {% endfor -%}
+        </div>
+    </div>
+{%- endblock %}

@@ -6,3 +6,8 @@ imports:
 #    'enhavo/form/editor':
 #        path: '../../enhavo/Entrypoint/editor'
 #        build: enhavo
+
+entrypoints:
+    'enhavo/app/form':
+        path: '../../enhavo/entrypoint/form.ts'
+        build: enhavo
