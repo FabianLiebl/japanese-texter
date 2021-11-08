@@ -2,8 +2,10 @@
   .tag-entity-type {
     .choice-input-container {
       .choice-input-with-label {
-        display: block;
+        display: inline-block;
         padding: 10px 0;
+        width: 33.3%;
+        margin-right: 0;
         label {
           position: relative;
           padding-left: 40px;

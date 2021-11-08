@@ -1,0 +1,6 @@
+services:
+    app.factory.letter:
+        class: App\Factory\LetterFactory
+        arguments:
+            - '%app.model.letter.class%'
+            - '@app.repository.letter'

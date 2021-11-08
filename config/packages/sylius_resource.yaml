@@ -4,6 +4,7 @@ sylius_resource:
             classes:
                 model: App\Entity\Letter
                 controller: Enhavo\Bundle\AppBundle\Controller\ResourceController
+                factory: App\Factory\LetterFactory
                 form: App\Form\LetterType
                 repository: App\Repository\LetterRepository
         app.tag:
