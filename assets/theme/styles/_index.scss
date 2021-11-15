@@ -54,10 +54,15 @@ html {
             position: relative;
             cursor: pointer;
             &:hover {
-              background-color: $backgroundColorTagHover;
+              box-shadow: 0 0 2px;
             }
             &.active {
-              background-color: $backgroundColorTagActive;
+              box-shadow: 0 2px 5px #000000;
+            }
+            &.not {
+              color: $colorTagNot;
+              border-color: $colorTagNot;
+              box-shadow: 0 2px 5px #000000;
             }
 
             .tag-icon {
@@ -118,7 +123,7 @@ html {
             position: relative;
             cursor: pointer;
             &:hover {
-              background-color: $backgroundColorLetterHover;
+              box-shadow: 0 0 2px;
             }
             &.filtered-out {
               display: none;

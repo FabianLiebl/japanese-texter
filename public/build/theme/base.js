@@ -216,9 +216,24 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     };
 
     Application.prototype.initFilter = function () {
-      var self = this;
-      this.$filterArea.find('[data-tag]').on('click', function () {
-        $(this).toggleClass('active');
+      var self = this; // this.$filterArea.find('[data-tag]').on('click', function () {
+      //     $(this).toggleClass('active');
+      //     self.updateFilters();
+      // });
+
+      this.$filterArea.find('[data-tag]').on('mouseup', function (event) {
+        switch (event.button) {
+          case 0:
+            $(this).removeClass('not');
+            $(this).toggleClass('active');
+            break;
+
+          case 1:
+            $(this).removeClass('active');
+            $(this).toggleClass('not');
+            break;
+        }
+
         self.updateFilters();
       });
     };
@@ -226,6 +241,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     Application.prototype.updateFilters = function () {
       var activeFilterOrGroups = [];
       var activeFiltersWithoutOrGroup = [];
+      var activeNotFilters = [];
       this.$filterArea.find('[data-tag].active').each(function () {
         var orGroupName = $(this).data('or-group');
 
@@ -246,11 +262,23 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
           activeFiltersWithoutOrGroup.push($(this).data('tag'));
         }
       });
+      this.$filterArea.find('[data-tag].not').each(function () {
+        activeNotFilters.push($(this).data('tag'));
+      });
       this.$letterArea.find('[data-letter]').each(function () {
         var ownTags = $(this).data('tags');
 
-        for (var _i = 0, activeFiltersWithoutOrGroup_1 = activeFiltersWithoutOrGroup; _i < activeFiltersWithoutOrGroup_1.length; _i++) {
-          var filter = activeFiltersWithoutOrGroup_1[_i];
+        for (var _i = 0, activeNotFilters_1 = activeNotFilters; _i < activeNotFilters_1.length; _i++) {
+          var filter = activeNotFilters_1[_i];
+
+          if (ownTags.hasOwnProperty(filter)) {
+            $(this).addClass('filtered-out');
+            return;
+          }
+        }
+
+        for (var _a = 0, activeFiltersWithoutOrGroup_1 = activeFiltersWithoutOrGroup; _a < activeFiltersWithoutOrGroup_1.length; _a++) {
+          var filter = activeFiltersWithoutOrGroup_1[_a];
 
           if (!ownTags.hasOwnProperty(filter)) {
             $(this).addClass('filtered-out');
@@ -258,12 +286,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
           }
         }
 
-        for (var _a = 0, activeFilterOrGroups_2 = activeFilterOrGroups; _a < activeFilterOrGroups_2.length; _a++) {
-          var orGroup = activeFilterOrGroups_2[_a];
+        for (var _b = 0, activeFilterOrGroups_2 = activeFilterOrGroups; _b < activeFilterOrGroups_2.length; _b++) {
+          var orGroup = activeFilterOrGroups_2[_b];
           var hasOne = false;
 
-          for (var _b = 0, _c = orGroup.filters; _b < _c.length; _b++) {
-            var filter = _c[_b];
+          for (var _c = 0, _d = orGroup.filters; _c < _d.length; _c++) {
+            var filter = _d[_c];
 
             if (ownTags.hasOwnProperty(filter)) {
               hasOne = true;

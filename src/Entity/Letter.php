@@ -149,4 +149,14 @@ class Letter implements ResourceInterface
         }
         return implode(', ', $result);
     }
+
+    public function getGroupColor()
+    {
+        foreach($this->getTags() as $tag) {
+            if ($tag->getHasGroupColor()) {
+                return $tag->getGroupColor();
+            }
+        }
+        return null;
+    }
 }

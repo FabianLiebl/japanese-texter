@@ -18,6 +18,12 @@ class Tag implements ResourceInterface
     /** @var ?string */
     private $orGroup;
 
+    /** @var ?bool */
+    private $hasGroupColor = false;
+
+    /** @var ?string */
+    private $groupColor;
+
     /** @var bool */
     private $favorite = false;
 
@@ -77,11 +83,43 @@ class Tag implements ResourceInterface
     }
 
     /**
+     * @return bool|null
+     */
+    public function getHasGroupColor(): ?bool
+    {
+        return $this->hasGroupColor;
+    }
+
+    /**
+     * @param bool|null $hasGroupColor
+     */
+    public function setHasGroupColor(?bool $hasGroupColor): void
+    {
+        $this->hasGroupColor = $hasGroupColor;
+    }
+
+    /**
      * @param string|null $orGroup
      */
     public function setOrGroup(?string $orGroup): void
     {
         $this->orGroup = $orGroup;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getGroupColor(): ?string
+    {
+        return $this->groupColor;
+    }
+
+    /**
+     * @param string|null $groupColor
+     */
+    public function setGroupColor(?string $groupColor): void
+    {
+        $this->groupColor = $groupColor;
     }
 
     /**

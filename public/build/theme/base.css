@@ -61,11 +61,17 @@ html body .container .tag-filter-area .tags .tag {
 }
 
 html body .container .tag-filter-area .tags .tag:hover {
-  background-color: #a7e7ff;
+  box-shadow: 0 0 2px;
 }
 
 html body .container .tag-filter-area .tags .tag.active {
-  background-color: #76dfff;
+  box-shadow: 0 2px 5px #000000;
+}
+
+html body .container .tag-filter-area .tags .tag.not {
+  color: #ff5555;
+  border-color: #ff5555;
+  box-shadow: 0 2px 5px #000000;
 }
 
 html body .container .tag-filter-area .tags .tag .tag-icon {
@@ -124,7 +130,7 @@ html body .container .letter-area .letters .letter {
 }
 
 html body .container .letter-area .letters .letter:hover {
-  background-color: #abffb6;
+  box-shadow: 0 0 2px;
 }
 
 html body .container .letter-area .letters .letter.filtered-out {

@@ -16,6 +16,11 @@ App\Entity\Tag:
         orGroup:
             type: string
             nullable: true
+        hasGroupColor:
+            type: boolean
+        groupColor:
+            type: string
+            nullable: true
         favorite:
             type: boolean
         position:

@@ -179,8 +179,21 @@ export default class Application
     private initFilter()
     {
         let self = this;
-        this.$filterArea.find('[data-tag]').on('click', function () {
-            $(this).toggleClass('active');
+        // this.$filterArea.find('[data-tag]').on('click', function () {
+        //     $(this).toggleClass('active');
+        //     self.updateFilters();
+        // });
+        this.$filterArea.find('[data-tag]').on('mouseup', function (event) {
+            switch (event.button) {
+                case 0:
+                    $(this).removeClass('not');
+                    $(this).toggleClass('active');
+                    break;
+                case 1:
+                    $(this).removeClass('active');
+                    $(this).toggleClass('not');
+                    break;
+            }
             self.updateFilters();
         });
     }
@@ -189,6 +202,7 @@ export default class Application
     {
         let activeFilterOrGroups: OrGroup[] = [];
         let activeFiltersWithoutOrGroup: number[] = [];
+        let activeNotFilters: number[] = [];
 
         this.$filterArea.find('[data-tag].active').each(function () {
             let orGroupName = $(this).data('or-group');
@@ -206,9 +220,18 @@ export default class Application
                 activeFiltersWithoutOrGroup.push($(this).data('tag'));
             }
         });
+        this.$filterArea.find('[data-tag].not').each(function () {
+            activeNotFilters.push($(this).data('tag'));
+        });
 
         this.$letterArea.find('[data-letter]').each(function () {
             let ownTags = <object> $(this).data('tags');
+            for(let filter of activeNotFilters) {
+                if (ownTags.hasOwnProperty(filter)) {
+                    $(this).addClass('filtered-out');
+                    return;
+                }
+            }
             for(let filter of activeFiltersWithoutOrGroup) {
                 if (!ownTags.hasOwnProperty(filter)) {
                     $(this).addClass('filtered-out');
