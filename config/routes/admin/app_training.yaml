@@ -1,0 +1,79 @@
+app_training_index:
+    options:
+        expose: true
+    path: /app/training/index
+    methods: [GET]
+    defaults:
+        _controller: app.controller.training:indexAction
+        _sylius:
+            viewer:
+
+app_training_create:
+    options:
+        expose: true
+    path: /app/training/create
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.training:createAction
+        _sylius:
+            redirect: app_training_update
+            viewer:
+
+app_training_update:
+    options:
+        expose: true
+    path: /app/training/update/{id}
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.training:updateAction
+        _sylius:
+            viewer:
+
+app_training_table:
+    options:
+        expose: true
+    path: /app/training/table
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.training:tableAction
+        _sylius:
+            viewer:
+                columns:
+                    name:
+                        label: Name
+                        property: name
+                        width: 12
+                        type: text
+
+app_training_delete:
+    options:
+        expose: true
+    path: /app/training/delete/{id}
+    methods: [ POST, DELETE ]
+    defaults:
+        _controller: app.controller.training:deleteAction
+
+app_training_batch:
+    options:
+        expose: true
+    path: /app/training/batch
+    methods: [POST]
+    defaults:
+        _controller: app.controller.training:batchAction
+        _sylius:
+            paginate: false
+            criteria:
+                id: $ids
+            batches:
+                delete:
+                    type: delete
+
+app_training_preview:
+    options:
+        expose: true
+    path: /app/training/preview
+    methods: [POST]
+    defaults:
+        _controller: app.controller.training:previewAction
+        _sylius:
+            viewer:

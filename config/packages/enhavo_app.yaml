@@ -19,6 +19,11 @@ enhavo_app:
             label: Tags
             icon: bookmark
             route: app_tag_index
+        training:
+            type: base
+            label: Training
+            icon: library_books
+            route: app_training_index
 #        page:
 #            type: page
 #        navigation:

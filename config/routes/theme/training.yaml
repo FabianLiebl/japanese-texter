@@ -1,0 +1,14 @@
+app_frontend_training_index:
+    path: /training/index
+    defaults:
+        _controller: App\Controller\TrainingController:indexAction
+
+app_frontend_training_training:
+    path: /training/train/{slug}/{type}
+    defaults:
+        _controller: App\Controller\TrainingController:trainAction
+
+app_frontend_training_adjust_letter_score:
+    path: /training/adjust-letter-score/{letterId}/{correct}
+    defaults:
+        _controller: App\Controller\TrainingController:adjustLetterScoreAction

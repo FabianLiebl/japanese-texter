@@ -1,0 +1,27 @@
+App\Entity\Training:
+    type: entity
+    table: app_training
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            nullable: true
+        slug:
+            type: string
+            nullable: true
+
+    oneToMany:
+        letters:
+            targetEntity: App\Entity\TrainingLetter
+            mappedBy: training
+            cascade: [ 'persist', 'refresh', 'remove' ]
+            orphanRemoval: true
+
+    lifecycleCallbacks: {  }

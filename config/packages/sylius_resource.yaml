@@ -13,3 +13,9 @@ sylius_resource:
                 controller: Enhavo\Bundle\AppBundle\Controller\ResourceController
                 form: App\Form\TagType
                 repository: App\Repository\TagRepository
+        app.training:
+            classes:
+                model: App\Entity\Training
+                controller: Enhavo\Bundle\AppBundle\Controller\ResourceController
+                form: App\Form\TrainingType
+                repository: App\Repository\TrainingRepository

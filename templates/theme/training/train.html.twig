@@ -1,0 +1,32 @@
+{% extends 'theme/base.html.twig' %}
+
+{% block main %}
+    <div class="training" data-training>
+        <div class="training-container">
+            <h1>{{ training.name }}</h1>
+            <div class="sheets">
+                {% for index, trainingEntry in trainingBatch.entries %}
+                    <div class="sheet{% if loop.index0 == 0 %} active{% endif %}" data-sheet="{{ index }}" data-letter="{{ trainingEntry.letterId }}">
+                        <div class="prompt-container">
+                            <div class="prompt">{{ trainingEntry.prompt }}</div>
+                        </div>
+                        <div class="choices-container">
+                            {% for choice in trainingEntry.choices %}
+                                <div class="choice{% if trainingEntry.correctResult == choice %} correct{% endif %}" data-choice="{% if trainingEntry.correctResult == choice %}correct{% else %}wrong{% endif %}">{{ choice }}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="next">
+                            <div class="next-link" data-next-sheet>Continue &gt;</div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="sheet result solved" data-sheet="result">
+                    <div class="result-message" data-result-message></div>
+                    <div class="next">
+                        <a href="{{ path('app_frontend_training_index') }}" class="next-link">&lt; Zurück zum Index</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

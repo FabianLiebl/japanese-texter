@@ -1,0 +1,124 @@
+.training-index {
+  background-color: $backgroundColorLetters;
+  padding: 5% 10%;
+  .list {
+    list-style: none;
+    padding-left: 0;
+    .training {
+      display: flex;
+      margin-bottom: 10px;
+      .title {
+        flex: 1 1 100%;
+        font-weight: bold;
+        padding: 20px 40px;
+        background-color: $backgroundColorTraining;
+      }
+      .link {
+        flex: 0 0 auto;
+        padding: 20px 40px;
+        background-color: $backgroundColorTrainingPrompt;
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.training {
+  background-color: $backgroundColorLetters;
+  padding: 5% 10%;
+  .training-container {
+    width: 500px;
+    padding: 20px 50px 50px 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: $backgroundColorTraining;
+    .sheets {
+      .sheet {
+        display: none;
+        margin-top: 50px;
+        &.active {
+          display: block;
+        }
+        .prompt-container {
+          .prompt {
+            width: 64px;
+            height: 64px;
+            padding: 2px;
+            border: 1px solid $color1;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            background-color: $backgroundColorTrainingPrompt;
+            font-size: 30px;
+            line-height: 64px;
+            text-align: center;
+          }
+        }
+        .choices-container {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 20px 0;
+          align-items: center;
+          justify-content: center;
+          .choice {
+            width: 64px;
+            height: 64px;
+            flex: 0 0 64px;
+            border: 1px solid $color1;
+            padding: 2px;
+            margin: 1px;
+            background-color: $backgroundColorTrainingChoice;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+              background-color: $backgroundColorTrainingChoiceHover;
+            }
+          }
+        }
+        .next {
+          padding: 20px 0;
+          display: none;
+          .next-link {
+
+          }
+        }
+        &.solved {
+          &.correct {
+            .prompt-container {
+              .prompt {
+                background-color: $backgroundColorTrainingCorrect;
+              }
+            }
+          }
+          .prompt-container {
+            .prompt {
+              background-color: $backgroundColorTrainingWrong;
+            }
+          }
+          .choices-container {
+            .choice {
+              background-color: $backgroundColorTrainingWrong;
+              &.correct {
+                background-color: $backgroundColorTrainingCorrect;
+              }
+            }
+          }
+          .result-message {
+            font-weight: bold;
+            text-align: center;
+          }
+          .next {
+            padding: 20px 0;
+            display: block;
+            text-align: center;
+            .next-link {
+              display: block;
+              padding: 20px 40px;
+              background-color: $backgroundColorTrainingPrompt;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,13 +7,18 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! ./javascript/Application */ "./assets/theme/javascript/Application.ts"), __webpack_require__(/*! ./styles/base.scss */ "./assets/theme/styles/base.scss")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, Application_1) {
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js"), __webpack_require__(/*! ./javascript/Application */ "./assets/theme/javascript/Application.ts"), __webpack_require__(/*! ./javascript/Training */ "./assets/theme/javascript/Training.ts"), __webpack_require__(/*! ./styles/base.scss */ "./assets/theme/styles/base.scss")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, $, Application_1, Training_1) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  new Application_1["default"]();
+
+  if ($('[data-training]').length > 0) {
+    new Training_1["default"]();
+  } else {
+    new Application_1["default"]();
+  }
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -324,6 +329,91 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
     return OrGroup;
   }();
+}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+/***/ }),
+
+/***/ "./assets/theme/javascript/Training.ts":
+/*!*********************************************!*\
+  !*** ./assets/theme/javascript/Training.ts ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js"), __webpack_require__(/*! axios */ "./node_modules/axios/index.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, $, axios_1) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var Training =
+  /** @class */
+  function () {
+    function Training() {
+      var _this = this;
+
+      this.numCorrect = 0;
+      this.numWrong = 0;
+      this.currentIndex = -1;
+      this.nextSheet();
+      $('[data-choice]').on('click', function (event) {
+        _this.choiceClick($(event.target));
+      });
+      $('[data-next-sheet]').on('click', function () {
+        _this.nextSheet();
+      });
+    }
+
+    Training.prototype.choiceClick = function ($target) {
+      if (!this.solved) {
+        this.solved = true;
+        var correct = $target.data('choice') == 'correct';
+        this.$currentSheet.addClass('solved');
+
+        if (correct) {
+          this.$currentSheet.addClass('correct');
+          this.numCorrect++;
+        } else {
+          this.numWrong++;
+        }
+
+        this.sendResult(this.currentLetterId, correct);
+      }
+    };
+
+    Training.prototype.nextSheet = function () {
+      $('[data-sheet]').removeClass('active');
+      this.currentIndex++;
+      this.$currentSheet = $('[data-sheet="' + this.currentIndex + '"]');
+      this.solved = false;
+
+      if (this.$currentSheet.length > 0) {
+        this.$currentSheet.addClass('active');
+        this.currentLetterId = this.$currentSheet.data('letter');
+      } else {
+        $('[data-result-message]').html('Finished, ' + this.numCorrect + ' correct and ' + this.numWrong + ' errors.');
+        $('[data-sheet="result"]').addClass('active');
+      }
+    };
+
+    Training.prototype.sendResult = function (letterId, correct) {
+      var url = '/training/adjust-letter-score/' + letterId + '/';
+
+      if (correct) {
+        url += '1';
+      } else {
+        url += '0';
+      }
+
+      axios_1["default"].get(url);
+    };
+
+    return Training;
+  }();
+
+  exports["default"] = Training;
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 

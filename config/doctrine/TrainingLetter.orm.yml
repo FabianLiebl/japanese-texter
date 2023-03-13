@@ -1,0 +1,26 @@
+App\Entity\TrainingLetter:
+    type: entity
+    table: app_training_letter
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        score:
+            type: integer
+
+    manyToOne:
+        letter:
+            targetEntity: App\Entity\Letter
+            joinColumn:
+                name: letter_id
+                onDelete: CASCADE
+        training:
+            targetEntity: App\Entity\Training
+            inversedBy: letters
+
+    lifecycleCallbacks: {  }
