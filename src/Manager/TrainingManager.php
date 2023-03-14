@@ -19,7 +19,7 @@ class TrainingManager
         self::TRAINING_TYPE_RANDOM,
     ];
 
-    const NUM_ENTRIES = 5;
+    const NUM_ENTRIES = 10;
     const NUM_CHOICES_PER_ENTRY = -1;
 
     const SCORE_BASE = 30;
@@ -61,7 +61,9 @@ class TrainingManager
             $letterList []= $letter;
         }
 
-        for($entryIndex = 0; $entryIndex < self::NUM_ENTRIES; $entryIndex++) {
+        $numEntries = min(self::NUM_ENTRIES, count($letterList));
+
+        for($entryIndex = 0; $entryIndex < $numEntries; $entryIndex++) {
             if (count($letterList) === 0) {
                 break;
             }
