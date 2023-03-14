@@ -66,6 +66,23 @@ class TrainingController extends AbstractController
         ]);
     }
 
+    public function listLettersAction(Request $request)
+    {
+        $slug = $request->get('slug');
+
+        $training = $this->trainingRepository->findOneBy([
+            'slug' => $slug,
+        ]);
+
+        if (!$training) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->render('theme/training/list-letters.html.twig', [
+            'training' => $training,
+        ]);
+    }
+
     public function adjustLetterScoreAction(Request $request)
     {
         $letterId = $request->get('letterId');

@@ -20,7 +20,7 @@ class TrainingManager
     ];
 
     const NUM_ENTRIES = 10;
-    const NUM_CHOICES_PER_ENTRY = -1;
+    const NUM_CHOICES_PER_ENTRY = 12;
 
     const SCORE_BASE = 30;
     const SCORE_MAX = 60;
@@ -145,11 +145,14 @@ class TrainingManager
             return $allLetters;
         }
 
+        $numChoices = min(self::NUM_CHOICES_PER_ENTRY, count($allLetters));
+
         shuffle($allLetters);
         $result = [];
-        for($i = 0; $i < self::NUM_CHOICES_PER_ENTRY; $i++) {
+        for($i = 0; $i < $numChoices; $i++) {
             $result []= $allLetters[$i];
         }
+        $result []= $correct;
         shuffle($result);
         return $result;
     }

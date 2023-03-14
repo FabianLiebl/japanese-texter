@@ -32,13 +32,14 @@
     margin-left: 50%;
     transform: translateX(-50%);
     background-color: $backgroundColorTraining;
-    h2 {
-      text-align: center;
-    }
     .sheets {
       .sheet {
         display: none;
-        margin-top: 50px;
+        h2 {
+          text-align: center;
+          padding: 15px 20px;
+          margin: 0 0 40px 0;
+        }
         &.active {
           display: block;
         }
@@ -87,7 +88,13 @@
           }
         }
         &.solved {
+          h2 {
+            background-color: $backgroundColorTrainingWrong;
+          }
           &.correct {
+            h2 {
+              background-color: $backgroundColorTrainingCorrect;
+            }
             .prompt-container {
               .prompt {
                 background-color: $backgroundColorTrainingCorrect;
@@ -128,6 +135,60 @@
   }
 }
 
+.training-list-letters {
+  background-color: $backgroundColorLetters;
+  padding: 5% 10%;
+  .list-letters-container {
+    width: 500px;
+    padding: 20px 50px 50px 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: $backgroundColorTraining;
+    h2 {
+      text-align: center;
+    }
+    .letters-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .letter {
+        display: block;
+        width: 64px;
+        height: 64px;
+        flex: 0 0 64px;
+        border: 1px solid $color1;
+        padding: 2px;
+        margin: 1px;
+        background-color: $backgroundColorLetter;
+        text-align: center;
+        position: relative;
+        .symbol {
+          font-size: 30px;
+        }
+        .sound {
+          width: calc(100% - 4px);
+          position: absolute;
+          bottom: 2px;
+          left: 0;
+          overflow: hidden;
+          padding: 2px;
+          font-size: 12px;
+        }
+      }
+    }
+    .back-link {
+      margin-top: 20px;
+      .link {
+        display: block;
+        padding: 20px 0;
+        text-align: center;
+        background-color: $backgroundColorTrainingPrompt;
+      }
+    }
+  }
+}
+
 @media all and (max-width: 1023px) {
   .training-index {
     padding: 5% 0;
@@ -146,6 +207,15 @@
     padding: 5% 0;
     .training-container {
       width: 100%;
+    }
+  }
+  .training-list-letters {
+    padding: 5% 0;
+    .list-letters-container{
+      width: 100%;
+      .letters-container {
+        padding: 0 10px;
+      }
     }
   }
 }

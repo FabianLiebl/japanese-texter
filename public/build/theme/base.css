@@ -234,13 +234,14 @@ html body .container .output-area .output-text-area {
   background-color: #d0f5ff;
 }
 
-.training .training-container h2 {
-  text-align: center;
-}
-
 .training .training-container .sheets .sheet {
   display: none;
-  margin-top: 50px;
+}
+
+.training .training-container .sheets .sheet h2 {
+  text-align: center;
+  padding: 15px 20px;
+  margin: 0 0 40px 0;
 }
 
 .training .training-container .sheets .sheet.active {
@@ -291,6 +292,14 @@ html body .container .output-area .output-text-area {
   display: none;
 }
 
+.training .training-container .sheets .sheet.solved h2 {
+  background-color: #ffd4d4;
+}
+
+.training .training-container .sheets .sheet.solved.correct h2 {
+  background-color: #5eff72;
+}
+
 .training .training-container .sheets .sheet.solved.correct .prompt-container .prompt {
   background-color: #5eff72;
 }
@@ -325,6 +334,68 @@ html body .container .output-area .output-text-area {
   cursor: pointer;
 }
 
+.training-list-letters {
+  background-color: #e0ffe4;
+  padding: 5% 10%;
+}
+
+.training-list-letters .list-letters-container {
+  width: 500px;
+  padding: 20px 50px 50px 50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: #d0f5ff;
+}
+
+.training-list-letters .list-letters-container h2 {
+  text-align: center;
+}
+
+.training-list-letters .list-letters-container .letters-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter {
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border: 1px solid #252525;
+  padding: 2px;
+  margin: 1px;
+  background-color: #cfffd6;
+  text-align: center;
+  position: relative;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter .symbol {
+  font-size: 30px;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter .sound {
+  width: calc(100% - 4px);
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  overflow: hidden;
+  padding: 2px;
+  font-size: 12px;
+}
+
+.training-list-letters .list-letters-container .back-link {
+  margin-top: 20px;
+}
+
+.training-list-letters .list-letters-container .back-link .link {
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #76dfff;
+}
+
 @media all and (max-width: 1023px) {
   .training-index {
     padding: 5% 0;
@@ -342,6 +413,15 @@ html body .container .output-area .output-text-area {
   }
   .training .training-container {
     width: 100%;
+  }
+  .training-list-letters {
+    padding: 5% 0;
+  }
+  .training-list-letters .list-letters-container {
+    width: 100%;
+  }
+  .training-list-letters .list-letters-container .letters-container {
+    padding: 0 10px;
   }
 }
 

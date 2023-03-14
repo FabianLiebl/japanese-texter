@@ -3,10 +3,11 @@
 {% block main %}
     <div class="training" data-training>
         <div class="training-container">
-            <h2>{{ training.name }}</h2>
             <div class="sheets">
+                {% set total = trainingBatch.entries|length %}
                 {% for index, trainingEntry in trainingBatch.entries %}
                     <div class="sheet{% if loop.index0 == 0 %} active{% endif %}" data-sheet="{{ index }}" data-letter="{{ trainingEntry.letterId }}">
+                        <h2>{{ training.name }} ({{ index + 1 }} / {{ total }})</h2>
                         <div class="prompt-container">
                             <div class="prompt">{{ trainingEntry.prompt }}</div>
                         </div>
@@ -20,7 +21,8 @@
                         </div>
                     </div>
                 {% endfor %}
-                <div class="sheet result solved" data-sheet="result">
+                <div class="sheet result solved correct" data-sheet="result">
+                    <h2>{{ training.name }} (finished)</h2>
                     <div class="result-message" data-result-message></div>
                     <div class="next">
                         <a href="{{ path('app_frontend_training_index') }}" class="next-link undecorated-link">&lt; Back to Index</a>

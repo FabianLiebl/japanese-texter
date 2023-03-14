@@ -6,6 +6,7 @@
             {% for training in trainings %}
                 <li class="training">
                     <span class="title">{{ training.name }}</span>
+                    <a class="link undecorated-link" href="{{ path('app_frontend_training_list_letters', { 'slug': training.slug }) }}">Letters</a>
                     <a class="link undecorated-link" href="{{ path('app_frontend_training_training', { 'slug': training.slug, 'type': constant('App\\Manager\\TrainingManager::TRAINING_TYPE_SOUND_LETTER') }) }}">Sound -> Letter</a>
                     <a class="link undecorated-link" href="{{ path('app_frontend_training_training', { 'slug': training.slug, 'type': constant('App\\Manager\\TrainingManager::TRAINING_TYPE_LETTER_SOUND') }) }}">Letter -> Sound</a>
                     <a class="link undecorated-link" href="{{ path('app_frontend_training_training', { 'slug': training.slug, 'type': constant('App\\Manager\\TrainingManager::TRAINING_TYPE_RANDOM') }) }}">Random</a>

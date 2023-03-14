@@ -8,6 +8,11 @@ app_frontend_training_training:
     defaults:
         _controller: App\Controller\TrainingController:trainAction
 
+app_frontend_training_list_letters:
+    path: /training/list-letters/{slug}
+    defaults:
+        _controller: App\Controller\TrainingController:listLettersAction
+
 app_frontend_training_adjust_letter_score:
     path: /training/adjust-letter-score/{letterId}/{correct}
     defaults:
