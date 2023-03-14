@@ -16,13 +16,17 @@ html {
       position: relative;
 
       header {
-        width: 100%;
+        display: flex;
+        justify-content: space-between;
         background-color: $backgroundColorHeader;
         padding: 20px;
         border-bottom: 1px solid $color1;
 
-        h1 {
+        h1, h2 {
           margin: 0;
+        }
+        a {
+          flex: 0 0 auto;
         }
       }
 
@@ -175,5 +179,12 @@ html {
         }
       }
     }
+  }
+}
+.undecorated-link {
+  text-decoration: none;
+  color: $color2;
+  &:visited, &:active, &:focus {
+    color: $color2;
   }
 }

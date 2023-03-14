@@ -1,5 +1,12 @@
 {% extends 'theme/base.html.twig' %}
 
+{% block header %}
+    <header>
+        <a href="{{ path('app_default_index') }}" class="undecorated-link"><h1>Japanese Texter</h1></a>
+        <a href="{{ path('app_frontend_training_index') }}" class="undecorated-link training-link"><h2>Training</h2></a>
+    </header>
+{% endblock %}
+
 {% block main %}
     <div class="tag-filter-area" data-filter-area>
         <ul class="tags favorite-tags" data-favorite-tags>

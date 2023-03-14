@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         {% if block("canonical_url") %}<link rel="canonical" href="{% block canonical_url %}{% endblock %}" />{% endif %}
         {% if block("meta_description") %}<meta name="description" content="{% block meta_description %}{% endblock %}" />{% endif %}
         {% if block("og_url") %}<meta name="og:url" content="{% block og_url %}{{ app.request.uri }}{% endblock %}" />{% endif %}
@@ -17,9 +18,11 @@
     <body>
     {% block body %}
         <div class="container">
-            <header>
-                <h1>Japanese Texter</h1>
-            </header>
+            {% block header %}
+                <header>
+                    <a href="{{ path('app_default_index') }}" class="undecorated-link"><h1>Japanese Texter</h1></a>
+                </header>
+            {% endblock %}
             {% block main %}{% endblock %}
         </div>
     {% endblock %}

@@ -32,6 +32,9 @@
     margin-left: 50%;
     transform: translateX(-50%);
     background-color: $backgroundColorTraining;
+    h2 {
+      text-align: center;
+    }
     .sheets {
       .sheet {
         display: none;
@@ -67,6 +70,8 @@
             padding: 2px;
             margin: 1px;
             background-color: $backgroundColorTrainingChoice;
+            font-size: 30px;
+            line-height: 64px;
             text-align: center;
             cursor: pointer;
             &:hover {
@@ -119,6 +124,28 @@
           }
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: 1023px) {
+  .training-index {
+    padding: 5% 0;
+    .list {
+      .training {
+        flex-direction: column;
+        text-align: center;
+        font-size: 20px;
+        .title, .link {
+          margin: 0 0 5px 0;
+        }
+      }
+    }
+  }
+  .training {
+    padding: 5% 0;
+    .training-container {
+      width: 100%;
     }
   }
 }

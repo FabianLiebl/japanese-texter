@@ -2,7 +2,6 @@
 
 namespace App\Manager;
 
-use App\Entity\Letter;
 use App\Entity\Training;
 use App\Entity\TrainingLetter;
 use App\Model\TrainingBatch;
@@ -20,7 +19,7 @@ class TrainingManager
         self::TRAINING_TYPE_RANDOM,
     ];
 
-    const NUM_ENTRIES = 3;
+    const NUM_ENTRIES = 5;
     const NUM_CHOICES_PER_ENTRY = -1;
 
     const SCORE_BASE = 30;
@@ -67,7 +66,7 @@ class TrainingManager
                 break;
             }
 
-            $rand = random_int(0, $totalScore);
+            $rand = random_int(0, $totalScore - 1);
             $letterIndex = 0;
             while (isset($letterList[$letterIndex]) && $rand >= $letterList[$letterIndex]->getScore()) {
                 $rand -= $letterList[$letterIndex]->getScore();

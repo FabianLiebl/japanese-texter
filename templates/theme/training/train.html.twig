@@ -3,7 +3,7 @@
 {% block main %}
     <div class="training" data-training>
         <div class="training-container">
-            <h1>{{ training.name }}</h1>
+            <h2>{{ training.name }}</h2>
             <div class="sheets">
                 {% for index, trainingEntry in trainingBatch.entries %}
                     <div class="sheet{% if loop.index0 == 0 %} active{% endif %}" data-sheet="{{ index }}" data-letter="{{ trainingEntry.letterId }}">
@@ -23,7 +23,7 @@
                 <div class="sheet result solved" data-sheet="result">
                     <div class="result-message" data-result-message></div>
                     <div class="next">
-                        <a href="{{ path('app_frontend_training_index') }}" class="next-link">&lt; Zurück zum Index</a>
+                        <a href="{{ path('app_frontend_training_index') }}" class="next-link undecorated-link">&lt; Back to Index</a>
                     </div>
                 </div>
             </div>

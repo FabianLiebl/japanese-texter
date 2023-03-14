@@ -19,14 +19,19 @@ html body .container {
 }
 
 html body .container header {
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
   background-color: #fff6ab;
   padding: 20px;
   border-bottom: 1px solid #252525;
 }
 
-html body .container header h1 {
+html body .container header h1, html body .container header h2 {
   margin: 0;
+}
+
+html body .container header a {
+  flex: 0 0 auto;
 }
 
 html body .container .tag-filter-area {
@@ -178,6 +183,15 @@ html body .container .output-area .output-text-area {
   font-size: 30px;
 }
 
+.undecorated-link {
+  text-decoration: none;
+  color: #101010;
+}
+
+.undecorated-link:visited, .undecorated-link:active, .undecorated-link:focus {
+  color: #101010;
+}
+
 .training-index {
   background-color: #e0ffe4;
   padding: 5% 10%;
@@ -220,6 +234,10 @@ html body .container .output-area .output-text-area {
   background-color: #d0f5ff;
 }
 
+.training .training-container h2 {
+  text-align: center;
+}
+
 .training .training-container .sheets .sheet {
   display: none;
   margin-top: 50px;
@@ -258,6 +276,8 @@ html body .container .output-area .output-text-area {
   padding: 2px;
   margin: 1px;
   background-color: #e5f8ff;
+  font-size: 30px;
+  line-height: 64px;
   text-align: center;
   cursor: pointer;
 }
@@ -303,5 +323,25 @@ html body .container .output-area .output-text-area {
   padding: 20px 40px;
   background-color: #76dfff;
   cursor: pointer;
+}
+
+@media all and (max-width: 1023px) {
+  .training-index {
+    padding: 5% 0;
+  }
+  .training-index .list .training {
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+  }
+  .training-index .list .training .title, .training-index .list .training .link {
+    margin: 0 0 5px 0;
+  }
+  .training {
+    padding: 5% 0;
+  }
+  .training .training-container {
+    width: 100%;
+  }
 }
 
