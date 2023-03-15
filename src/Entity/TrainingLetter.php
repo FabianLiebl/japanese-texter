@@ -84,4 +84,14 @@ class TrainingLetter
     {
         $this->training = $training;
     }
+
+    public function getScoreClass()
+    {
+        if ($this->getScore() <= TrainingManager::SCORE_GOOD) {
+            return 'good';
+        } elseif ($this->getScore() <= TrainingManager::SCORE_MID) {
+            return 'mid';
+        }
+        return 'bad';
+    }
 }

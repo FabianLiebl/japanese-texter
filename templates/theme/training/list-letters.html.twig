@@ -6,7 +6,7 @@
             <h2>{{ training.name }} letters</h2>
             <div class="letters-container">
                 {% for letter in training.letters %}
-                    <div class="letter">
+                    <div class="letter {{ letter.scoreClass }}">
                         <span class="symbol">{{ letter.letter.letter }}</span>
                         <span class="sound">{{ letter.letter.sound }}</span>
                     </div>

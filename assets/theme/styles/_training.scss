@@ -160,9 +160,17 @@
         border: 1px solid $color1;
         padding: 2px;
         margin: 1px;
-        background-color: $backgroundColorLetter;
         text-align: center;
         position: relative;
+        &.good {
+          background-color: $backgroundColorTrainingListLettersGood;
+        }
+        &.mid {
+          background-color: $backgroundColorTrainingListLettersMid;
+        }
+        &.bad {
+          background-color: $backgroundColorTrainingListLettersBad;
+        }
         .symbol {
           font-size: 30px;
         }

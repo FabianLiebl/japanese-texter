@@ -26,6 +26,8 @@ class TrainingManager
     const SCORE_MAX = 60;
     const SCORE_ADJUSTMENT_CORRECT = -1;
     const SCORE_ADJUSTMENT_WRONG = 5;
+    const SCORE_GOOD = 10;
+    const SCORE_MID = 20;
 
     public function createTrainingBatch(Training $training, string $type): TrainingBatch
     {
@@ -82,6 +84,7 @@ class TrainingManager
             }
         }
 
+        shuffle($result);
         return $result;
     }
 
@@ -145,7 +148,7 @@ class TrainingManager
             return $allLetters;
         }
 
-        $numChoices = min(self::NUM_CHOICES_PER_ENTRY, count($allLetters));
+        $numChoices = min(self::NUM_CHOICES_PER_ENTRY - 1, count($allLetters));
 
         shuffle($allLetters);
         $result = [];

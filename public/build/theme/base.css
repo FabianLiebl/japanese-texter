@@ -366,9 +366,20 @@ html body .container .output-area .output-text-area {
   border: 1px solid #252525;
   padding: 2px;
   margin: 1px;
-  background-color: #cfffd6;
   text-align: center;
   position: relative;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter.good {
+  background-color: #cfffd6;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter.mid {
+  background-color: #fff6ab;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter.bad {
+  background-color: #ffd4d4;
 }
 
 .training-list-letters .list-letters-container .letters-container .letter .symbol {
