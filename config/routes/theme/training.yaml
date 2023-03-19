@@ -17,3 +17,8 @@ app_frontend_training_adjust_letter_score:
     path: /training/adjust-letter-score/{letterId}/{correct}
     defaults:
         _controller: App\Controller\TrainingController:adjustLetterScoreAction
+
+app_frontend_training_change_letter_score:
+    path: /training/change-letter-score/{letterId}/{value}
+    defaults:
+        _controller: App\Controller\TrainingController:changeLetterScoreAction

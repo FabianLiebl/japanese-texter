@@ -53,6 +53,11 @@ class TrainingManager
         $letter->setScore(max(1, min(self::SCORE_MAX, $letter->getScore() + $adjustment)));
     }
 
+    public function changeLetterScore(TrainingLetter $letter, int $value)
+    {
+        $letter->setScore(max(1, min(self::SCORE_MAX, $letter->getScore() + $value)));
+    }
+
     private function chooseLettersByScore(Training $training): array
     {
         $result = [];

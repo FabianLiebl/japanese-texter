@@ -88,6 +88,7 @@ class TrainingController extends AbstractController
         $letterId = $request->get('letterId');
         $correct = $request->get('correct') == '1';
 
+        /** @var ?TrainingLetter $letter */
         $letter = $this->entityManager->getRepository(TrainingLetter::class)->find($letterId);
         if (!$letter) {
             throw new NotFoundHttpException();
@@ -98,6 +99,27 @@ class TrainingController extends AbstractController
 
         return new JsonResponse([
             'success' => true,
+        ]);
+    }
+
+    public function changeLetterScoreAction(Request $request)
+    {
+        $letterId = $request->get('letterId');
+        $value = $request->get('value');
+
+        /** @var ?TrainingLetter $letter */
+        $letter = $this->entityManager->getRepository(TrainingLetter::class)->find($letterId);
+        if (!$letter) {
+            throw new NotFoundHttpException();
+        }
+
+        $this->trainingManager->changeLetterScore($letter, intval($value));
+        $this->entityManager->flush();
+
+        return new JsonResponse([
+            'success' => true,
+            'score' => $letter->getScore(),
+            'scoreClass' => $letter->getScoreClass(),
         ]);
     }
 }

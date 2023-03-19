@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js"), __webpack_require__(/*! ./javascript/Application */ "./assets/theme/javascript/Application.ts"), __webpack_require__(/*! ./javascript/Training */ "./assets/theme/javascript/Training.ts"), __webpack_require__(/*! ./styles/base.scss */ "./assets/theme/styles/base.scss")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, $, Application_1, Training_1) {
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js"), __webpack_require__(/*! ./javascript/Application */ "./assets/theme/javascript/Application.ts"), __webpack_require__(/*! ./javascript/Training */ "./assets/theme/javascript/Training.ts"), __webpack_require__(/*! ./javascript/TrainingLetters */ "./assets/theme/javascript/TrainingLetters.ts"), __webpack_require__(/*! ./styles/base.scss */ "./assets/theme/styles/base.scss")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, $, Application_1, Training_1, TrainingLetters_1) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -16,6 +16,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
 
   if ($('[data-training]').length > 0) {
     new Training_1["default"]();
+  } else if ($('[data-training-letters]').length > 0) {
+    new TrainingLetters_1["default"]();
   } else {
     new Application_1["default"]();
   }
@@ -207,7 +209,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       var self = this;
       self.$dataOutputField.on('click keyup', function () {
         _this.textFieldCursorPosition = self.$dataOutputField.prop('selectionStart');
-        console.log(_this.textFieldCursorPosition);
       });
       this.$letterArea.find('[data-letter]').on('click', function () {
         var currentText = self.$dataOutputField.val();
@@ -414,6 +415,53 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
   }();
 
   exports["default"] = Training;
+}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+/***/ }),
+
+/***/ "./assets/theme/javascript/TrainingLetters.ts":
+/*!****************************************************!*\
+  !*** ./assets/theme/javascript/TrainingLetters.ts ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/src/jquery.js"), __webpack_require__(/*! axios */ "./node_modules/axios/index.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (require, exports, $, axios_1) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var TrainingLetters =
+  /** @class */
+  function () {
+    function TrainingLetters() {
+      var _this = this;
+
+      $('[data-change-score]').on('click', function (event) {
+        event.preventDefault();
+
+        _this.changeLetterScore($(event.target));
+      });
+    }
+
+    TrainingLetters.prototype.changeLetterScore = function ($target) {
+      var url = $target.prop('href');
+      var $letter = $target.closest('[data-letter]');
+      axios_1["default"].get(url).then(function (response) {
+        if (response.data.success) {
+          $letter.removeClass('good').removeClass('mid').removeClass('bad').addClass(response.data.scoreClass);
+          $letter.find('[data-score]').html(response.data.score);
+        }
+      });
+    };
+
+    return TrainingLetters;
+  }();
+
+  exports["default"] = TrainingLetters;
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 

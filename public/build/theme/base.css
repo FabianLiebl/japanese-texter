@@ -387,6 +387,7 @@ html body .container .output-area .output-text-area {
 }
 
 .training-list-letters .list-letters-container .letters-container .letter .sound {
+  display: block;
   width: calc(100% - 4px);
   position: absolute;
   bottom: 2px;
@@ -394,6 +395,54 @@ html body .container .output-area .output-text-area {
   overflow: hidden;
   padding: 2px;
   font-size: 12px;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter .score {
+  display: none;
+  width: calc(100% - 4px);
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  overflow: hidden;
+  padding: 2px;
+  font-size: 12px;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter .change-score {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 70px;
+  text-decoration: none;
+  color: #252525;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.training-list-letters .list-letters-container .letters-container .letter .change-score.plus {
+  right: 0;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter .change-score.minus {
+  left: 0;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter .change-score:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.training-list-letters .list-letters-container .letters-container .letter:hover .change-score {
+  display: block;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter:hover .sound {
+  display: none;
+}
+
+.training-list-letters .list-letters-container .letters-container .letter:hover .score {
+  display: block;
 }
 
 .training-list-letters .list-letters-container .back-link {

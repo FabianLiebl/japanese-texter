@@ -158,7 +158,6 @@ export default class Application
 
         self.$dataOutputField.on('click keyup', () => {
             this.textFieldCursorPosition = self.$dataOutputField.prop('selectionStart');
-            console.log(this.textFieldCursorPosition);
         });
 
         this.$letterArea.find('[data-letter]').on('click', function () {

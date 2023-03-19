@@ -175,6 +175,7 @@
           font-size: 30px;
         }
         .sound {
+          display: block;
           width: calc(100% - 4px);
           position: absolute;
           bottom: 2px;
@@ -182,6 +183,48 @@
           overflow: hidden;
           padding: 2px;
           font-size: 12px;
+        }
+        .score {
+          display: none;
+          width: calc(100% - 4px);
+          position: absolute;
+          bottom: 2px;
+          left: 0;
+          overflow: hidden;
+          padding: 2px;
+          font-size: 12px;
+        }
+        .change-score {
+          display: none;
+          position: absolute;
+          top: 0;
+          width: 20px;
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 70px;
+          text-decoration: none;
+          color: $color1;
+          background-color: rgba(0,0,0,0.1);
+          &.plus {
+            right: 0;
+          }
+          &.minus {
+            left: 0;
+          }
+          &:hover {
+            background-color: rgba(0,0,0,0.2);
+          }
+        }
+        &:hover {
+          .change-score {
+            display: block;
+          }
+          .sound {
+            display: none;
+          }
+          .score {
+            display: block;
+          }
         }
       }
     }
