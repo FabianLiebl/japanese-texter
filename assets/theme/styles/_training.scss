@@ -139,7 +139,7 @@
   background-color: $backgroundColorLetters;
   padding: 5% 10%;
   .list-letters-container {
-    width: 420px;
+    width: 360px;
     padding: 20px 50px 50px 50px;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -265,8 +265,18 @@
     .list-letters-container{
       width: 100%;
       .letters-container {
-        width: 420px;
+        width: 360px;
         margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 359px) {
+  .training-list-letters {
+    .list-letters-container{
+      .letters-container {
+        width: 100%;
       }
     }
   }
