@@ -371,6 +371,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       if (!this.solved) {
         this.solved = true;
         var correct = $target.data('choice') == 'correct';
+        var chosenLetterId = $target.data('letter-id');
         this.$currentSheet.addClass('solved');
 
         if (correct) {
@@ -380,7 +381,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
           this.numWrong++;
         }
 
-        this.sendResult(this.currentLetterId, correct);
+        this.sendResult(this.currentLetterId, correct, chosenLetterId);
       }
     };
 
@@ -394,12 +395,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         this.$currentSheet.addClass('active');
         this.currentLetterId = this.$currentSheet.data('letter');
       } else {
-        $('[data-result-message]').html('Finished, ' + this.numCorrect + ' correct and ' + this.numWrong + ' errors.');
-        $('[data-sheet="result"]').addClass('active');
+        location.reload(); // $('[data-result-message]').html('Finished, ' + this.numCorrect + ' correct and ' + this.numWrong + ' errors.');
+        // $('[data-sheet="result"]').addClass('active');
       }
     };
 
-    Training.prototype.sendResult = function (letterId, correct) {
+    Training.prototype.sendResult = function (letterId, correct, chosenLetterId) {
       var url = '/training/adjust-letter-score/' + letterId + '/';
 
       if (correct) {
@@ -409,6 +410,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       }
 
       axios_1["default"].get(url);
+
+      if (!correct) {
+        var url_1 = '/training/adjust-letter-score/' + chosenLetterId + '/0';
+        axios_1["default"].get(url_1);
+      }
     };
 
     return Training;

@@ -29,6 +29,7 @@ export default class Training
         if (!this.solved) {
             this.solved = true;
             let correct = $target.data('choice') == 'correct';
+            let chosenLetterId = $target.data('letter-id');
             this.$currentSheet.addClass('solved');
             if (correct) {
                 this.$currentSheet.addClass('correct');
@@ -36,7 +37,7 @@ export default class Training
             } else {
                 this.numWrong++;
             }
-            this.sendResult(this.currentLetterId, correct);
+            this.sendResult(this.currentLetterId, correct, chosenLetterId);
         }
     }
 
@@ -52,12 +53,13 @@ export default class Training
             this.$currentSheet.addClass('active');
             this.currentLetterId = this.$currentSheet.data('letter');
         } else {
-            $('[data-result-message]').html('Finished, ' + this.numCorrect + ' correct and ' + this.numWrong + ' errors.')
-            $('[data-sheet="result"]').addClass('active');
+            location.reload();
+            // $('[data-result-message]').html('Finished, ' + this.numCorrect + ' correct and ' + this.numWrong + ' errors.');
+            // $('[data-sheet="result"]').addClass('active');
         }
     }
 
-    private sendResult(letterId: number, correct: boolean)
+    private sendResult(letterId: number, correct: boolean, chosenLetterId: string)
     {
         let url = '/training/adjust-letter-score/' + letterId + '/';
         if (correct) {
@@ -66,5 +68,9 @@ export default class Training
             url += '0';
         }
         axios.get(url);
+        if (!correct) {
+            let url = '/training/adjust-letter-score/' + chosenLetterId + '/0';
+            axios.get(url);
+        }
     }
 }

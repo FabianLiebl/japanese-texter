@@ -5,6 +5,7 @@ namespace App\Manager;
 use App\Entity\Training;
 use App\Entity\TrainingLetter;
 use App\Model\TrainingBatch;
+use App\Model\TrainingBatchChoice;
 use App\Model\TrainingBatchEntry;
 
 class TrainingManager
@@ -104,7 +105,7 @@ class TrainingManager
             $entry = new TrainingBatchEntry(
                 $letter->getLetter()->getSound(),
                 $letter->getLetter()->getLetter(),
-                $this->getRandomChoices($training, $letter->getLetter()->getLetter(), false),
+                $this->getRandomChoices($training, $letter, false),
                 $letter->getId()
             );
             $entries []= $entry;
@@ -124,7 +125,7 @@ class TrainingManager
             $entry = new TrainingBatchEntry(
                 $letter->getLetter()->getLetter(),
                 $letter->getLetter()->getSound(),
-                $this->getRandomChoices($training, $letter->getLetter()->getSound(), true),
+                $this->getRandomChoices($training, $letter, true),
                 $letter->getId()
             );
             $entries []= $entry;
@@ -133,35 +134,46 @@ class TrainingManager
         return $result;
     }
 
-    private function getRandomChoices(Training $training, string $correct, bool $sound): array
+    private function getRandomChoices(Training $training, TrainingLetter $correct, bool $sound): array
     {
         $allLetters = [];
         foreach($training->getLetters() as $letter) {
             if ($sound) {
                 $value = $letter->getLetter()->getSound();
+                $correctValue = $correct->getLetter()->getSound();
             } else {
                 $value = $letter->getLetter()->getLetter();
+                $correctValue = $correct->getLetter()->getLetter();
             }
-            if ($value !== $correct) {
-                $allLetters []= $value;
+            if ($value !== $correctValue) {
+                $allLetters []= $letter;
             }
         }
 
+        $resultLetters = [];
         if (self::NUM_CHOICES_PER_ENTRY <= 0) {
-            $allLetters []= $correct;
+            $resultLetters = $allLetters;
+        } else {
+            $numChoices = min(self::NUM_CHOICES_PER_ENTRY - 1, count($allLetters));
+
             shuffle($allLetters);
-            return $allLetters;
+            for($i = 0; $i < $numChoices; $i++) {
+                $resultLetters []= $allLetters[$i];
+            }
+        }
+        $resultLetters []= $correct;
+        shuffle($resultLetters);
+
+        $resultTrainingBatchChoices = [];
+        foreach($resultLetters as $resultLetter) {
+            if ($sound) {
+                $value = $resultLetter->getLetter()->getSound();
+            } else {
+                $value = $resultLetter->getLetter()->getLetter();
+            }
+            $resultTrainingBatchChoices []= new TrainingBatchChoice($value, $resultLetter->getId());
         }
 
-        $numChoices = min(self::NUM_CHOICES_PER_ENTRY - 1, count($allLetters));
-
-        shuffle($allLetters);
-        $result = [];
-        for($i = 0; $i < $numChoices; $i++) {
-            $result []= $allLetters[$i];
-        }
-        $result []= $correct;
-        shuffle($result);
-        return $result;
+        return $resultTrainingBatchChoices;
     }
 }

@@ -236,12 +236,26 @@ html body .container .output-area .output-text-area {
 
 .training .training-container .sheets .sheet {
   display: none;
+  position: relative;
 }
 
 .training .training-container .sheets .sheet h2 {
   text-align: center;
   padding: 15px 20px;
   margin: 0 0 40px 0;
+}
+
+.training .training-container .sheets .sheet .close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.training .training-container .sheets .sheet .close:hover {
+  background-color: #e5f8ff;
 }
 
 .training .training-container .sheets .sheet.active {
@@ -290,14 +304,6 @@ html body .container .output-area .output-text-area {
 .training .training-container .sheets .sheet .next {
   padding: 20px 0;
   display: none;
-}
-
-.training .training-container .sheets .sheet.solved h2 {
-  background-color: #ffd4d4;
-}
-
-.training .training-container .sheets .sheet.solved.correct h2 {
-  background-color: #5eff72;
 }
 
 .training .training-container .sheets .sheet.solved.correct .prompt-container .prompt {

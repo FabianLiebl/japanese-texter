@@ -35,10 +35,23 @@
     .sheets {
       .sheet {
         display: none;
+        position: relative;
         h2 {
           text-align: center;
           padding: 15px 20px;
           margin: 0 0 40px 0;
+        }
+        .close {
+          position: absolute;
+          top: 0;
+          left: 0;
+          //background-color: $backgroundColorTrainingPrompt;
+          padding: 10px 20px;
+          font-size: 30px;
+          font-weight: bold;
+          &:hover {
+            background-color: $backgroundColorTrainingChoice;
+          }
         }
         &.active {
           display: block;
@@ -88,13 +101,13 @@
           }
         }
         &.solved {
-          h2 {
-            background-color: $backgroundColorTrainingWrong;
-          }
+          //h2 {
+          //  background-color: $backgroundColorTrainingWrong;
+          //}
           &.correct {
-            h2 {
-              background-color: $backgroundColorTrainingCorrect;
-            }
+            //h2 {
+            //  background-color: $backgroundColorTrainingCorrect;
+            //}
             .prompt-container {
               .prompt {
                 background-color: $backgroundColorTrainingCorrect;

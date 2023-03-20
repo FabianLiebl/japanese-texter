@@ -21,7 +21,7 @@ class TrainingBatchEntry
     /**
      * @param string|null $prompt
      * @param string|null $correctResult
-     * @param string[] $choices
+     * @param TrainingBatchChoice[] $choices
      * @param int|null $letterId
      */
     public function __construct(?string $prompt, ?string $correctResult, array $choices, ?int $letterId)
@@ -65,7 +65,7 @@ class TrainingBatchEntry
     }
 
     /**
-     * @return string[]
+     * @return TrainingBatchChoice[]
      */
     public function getChoices(): array
     {
@@ -73,7 +73,7 @@ class TrainingBatchEntry
     }
 
     /**
-     * @param string[] $choices
+     * @param TrainingBatchChoice[] $choices
      */
     public function setChoices(array $choices): void
     {

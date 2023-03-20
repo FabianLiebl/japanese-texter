@@ -7,13 +7,14 @@
                 {% set total = trainingBatch.entries|length %}
                 {% for index, trainingEntry in trainingBatch.entries %}
                     <div class="sheet{% if loop.index0 == 0 %} active{% endif %}" data-sheet="{{ index }}" data-letter="{{ trainingEntry.letterId }}">
+                        <a href="{{ path('app_frontend_training_index') }}" class="close undecorated-link">&lt;</a>
                         <h2>{{ training.name }} ({{ index + 1 }} / {{ total }})</h2>
                         <div class="prompt-container">
                             <div class="prompt">{{ trainingEntry.prompt }}</div>
                         </div>
                         <div class="choices-container">
                             {% for choice in trainingEntry.choices %}
-                                <div class="choice{% if trainingEntry.correctResult == choice %} correct{% endif %}" data-choice="{% if trainingEntry.correctResult == choice %}correct{% else %}wrong{% endif %}">{{ choice }}</div>
+                                <div class="choice{% if trainingEntry.correctResult == choice.choice %} correct{% endif %}" data-choice="{% if trainingEntry.correctResult == choice.choice %}correct{% else %}wrong{% endif %}" data-letter-id="{{ choice.letterId }}">{{ choice.choice }}</div>
                             {% endfor %}
                         </div>
                         <div class="next">
