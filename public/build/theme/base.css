@@ -340,7 +340,7 @@ html body .container .output-area .output-text-area {
 }
 
 .training-list-letters .list-letters-container {
-  width: 500px;
+  width: 420px;
   padding: 20px 50px 50px 50px;
   margin-left: 50%;
   transform: translateX(-50%);
@@ -481,7 +481,8 @@ html body .container .output-area .output-text-area {
     width: 100%;
   }
   .training-list-letters .list-letters-container .letters-container {
-    padding: 0 10px;
+    width: 420px;
+    margin: 0 auto;
   }
 }
 

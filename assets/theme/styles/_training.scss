@@ -139,7 +139,7 @@
   background-color: $backgroundColorLetters;
   padding: 5% 10%;
   .list-letters-container {
-    width: 500px;
+    width: 420px;
     padding: 20px 50px 50px 50px;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -265,7 +265,8 @@
     .list-letters-container{
       width: 100%;
       .letters-container {
-        padding: 0 10px;
+        width: 420px;
+        margin: 0 auto;
       }
     }
   }
