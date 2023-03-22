@@ -57,17 +57,37 @@
           display: block;
         }
         .prompt-container {
+          display: flex;
+          justify-content: space-between;
+
           .prompt {
-            width: 64px;
+            flex: 0 0 64px;
             height: 64px;
             padding: 2px;
             border: 1px solid $color1;
-            margin-left: 50%;
-            transform: translateX(-50%);
             background-color: $backgroundColorTrainingPrompt;
             font-size: 30px;
             line-height: 64px;
             text-align: center;
+          }
+
+          .score-icon {
+            flex: 0 0 70px;
+            border-radius: 35px;
+            cursor: pointer;
+            font-size: 30px;
+            text-align: center;
+            line-height: 70px;
+            font-weight: bold;
+            &:hover {
+              background-color: $backgroundColorTrainingChoice;
+            }
+            &.clicked {
+              background-color: $backgroundColorTrainingPrompt;
+              &:hover {
+                background-color: $backgroundColorTrainingPrompt;
+              }
+            }
           }
         }
         .choices-container {

@@ -365,6 +365,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       $('[data-next-sheet]').on('click', function () {
         _this.nextSheet();
       });
+      $('[data-change-score]').on('click', function (event) {
+        _this.changeScore($(event.target));
+      });
     }
 
     Training.prototype.choiceClick = function ($target) {
@@ -415,6 +418,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         var url_1 = '/training/adjust-letter-score/' + chosenLetterId + '/0';
         axios_1["default"].get(url_1);
       }
+    };
+
+    Training.prototype.changeScore = function ($target) {
+      if ($target.hasClass('clicked')) {
+        return;
+      }
+
+      $target.addClass('clicked');
+      var url = $target.data('change-score');
+      axios_1["default"].get(url);
     };
 
     return Training;

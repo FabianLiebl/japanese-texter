@@ -266,17 +266,42 @@ html body .container .output-area .output-text-area {
   display: block;
 }
 
+.training .training-container .sheets .sheet .prompt-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .training .training-container .sheets .sheet .prompt-container .prompt {
-  width: 64px;
+  flex: 0 0 64px;
   height: 64px;
   padding: 2px;
   border: 1px solid #252525;
-  margin-left: 50%;
-  transform: translateX(-50%);
   background-color: #76dfff;
   font-size: 30px;
   line-height: 64px;
   text-align: center;
+}
+
+.training .training-container .sheets .sheet .prompt-container .score-icon {
+  flex: 0 0 70px;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+  line-height: 70px;
+  font-weight: bold;
+}
+
+.training .training-container .sheets .sheet .prompt-container .score-icon:hover {
+  background-color: #e5f8ff;
+}
+
+.training .training-container .sheets .sheet .prompt-container .score-icon.clicked {
+  background-color: #76dfff;
+}
+
+.training .training-container .sheets .sheet .prompt-container .score-icon.clicked:hover {
+  background-color: #76dfff;
 }
 
 .training .training-container .sheets .sheet .choices-container {

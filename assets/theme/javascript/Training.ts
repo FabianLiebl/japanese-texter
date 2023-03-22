@@ -22,6 +22,9 @@ export default class Training
         $('[data-next-sheet]').on('click', () => {
             this.nextSheet();
         });
+        $('[data-change-score]').on('click', (event) => {
+            this.changeScore($(event.target));
+        });
     }
 
     private choiceClick($target: JQuery)
@@ -72,5 +75,15 @@ export default class Training
             let url = '/training/adjust-letter-score/' + chosenLetterId + '/0';
             axios.get(url);
         }
+    }
+
+    private changeScore($target: JQuery)
+    {
+        if ($target.hasClass('clicked')) {
+            return;
+        }
+        $target.addClass('clicked');
+        let url = $target.data('change-score');
+        axios.get(url);
     }
 }
