@@ -15,7 +15,7 @@
             {{ encore_entry_link_tags('base', null, 'theme') }}
         {% endblock %}
     </head>
-    <body>
+    <body {% block body_class %}{% endblock %}>
     {% block body %}
         <div class="container">
             {% block header %}
