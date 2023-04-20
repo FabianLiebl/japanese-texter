@@ -7,6 +7,13 @@ sylius_resource:
                 factory: App\Factory\LetterFactory
                 form: App\Form\LetterType
                 repository: App\Repository\LetterRepository
+        app.letter_line:
+            classes:
+                model: App\Entity\LetterLine
+                controller: Enhavo\Bundle\AppBundle\Controller\ResourceController
+                factory: App\Factory\LetterLineFactory
+                form: App\Form\LetterLineType
+                repository: App\Repository\LetterLineRepository
         app.tag:
             classes:
                 model: App\Entity\Tag

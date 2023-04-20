@@ -26,6 +26,9 @@ class Letter implements ResourceInterface
     /** @var Collection|Tag[]|null */
     private $tags;
 
+    /** @var ?LetterLine */
+    private $letterLine;
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();
@@ -158,5 +161,21 @@ class Letter implements ResourceInterface
             }
         }
         return null;
+    }
+
+    /**
+     * @return LetterLine|null
+     */
+    public function getLetterLine(): ?LetterLine
+    {
+        return $this->letterLine;
+    }
+
+    /**
+     * @param LetterLine|null $letterLine
+     */
+    public function setLetterLine(?LetterLine $letterLine): void
+    {
+        $this->letterLine = $letterLine;
     }
 }

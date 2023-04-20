@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Tag;
+use App\Repository\LetterLineRepository;
 use App\Repository\LetterRepository;
 use App\Repository\TagRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -19,6 +20,9 @@ class DefaultController extends AbstractController
     /** @var LetterRepository */
     private $letterRepository;
 
+    /** @var LetterLineRepository */
+    private $letterLineRepository;
+
     /** @var EntityManagerInterface */
     private $entityManager;
 
@@ -27,10 +31,11 @@ class DefaultController extends AbstractController
      * @param LetterRepository $letterRepository
      * @param EntityManagerInterface $entityManager
      */
-    public function __construct(TagRepository $tagRepository, LetterRepository $letterRepository, EntityManagerInterface $entityManager)
+    public function __construct(TagRepository $tagRepository, LetterRepository $letterRepository, LetterLineRepository $letterLineRepository, EntityManagerInterface $entityManager)
     {
         $this->tagRepository = $tagRepository;
         $this->letterRepository = $letterRepository;
+        $this->letterLineRepository = $letterLineRepository;
         $this->entityManager = $entityManager;
     }
 
@@ -39,14 +44,16 @@ class DefaultController extends AbstractController
         $favoriteTags = $this->tagRepository->findBy(['favorite' => true], ['position' => 'asc']);
         $tags = $this->tagRepository->findBy(['favorite' => false], ['position' => 'asc']);
 
-        $favoriteLetters = $this->letterRepository->findBy(['favorite' => true], ['position' => 'asc']);
-        $letters = $this->letterRepository->findBy(['favorite' => false], ['position' => 'asc']);
+//        $favoriteLetters = $this->letterRepository->findBy(['favorite' => true], ['position' => 'asc']);
+        $lines = $this->letterLineRepository->findBy([], ['position' => 'asc']);
+//        $letters = $this->letterRepository->findBy(['favorite' => false, 'letterLine' => null], ['position' => 'asc']);
 
         return $this->render('theme/default/index.html.twig', [
             'favoriteTags' => $favoriteTags,
             'tags' => $tags,
-            'favoriteLetters' => $favoriteLetters,
-            'letters' => $letters,
+//            'favoriteLetters' => $favoriteLetters,
+//            'letters' => $letters,
+            'lines' => $lines,
         ]);
     }
 

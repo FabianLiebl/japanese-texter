@@ -117,6 +117,10 @@ html {
           min-height: 0;
           transition: min-height .3s ease-in-out;
 
+          &.line {
+            padding-bottom: 0;
+          }
+
           .letter {
             list-style: none;
             display: block;

@@ -4,3 +4,9 @@ services:
         arguments:
             - '%app.model.letter.class%'
             - '@app.repository.letter'
+
+    app.factory.letter_line:
+        class: App\Factory\LetterLineFactory
+        arguments:
+            - '%app.model.letter_line.class%'
+            - '@app.repository.letter_line'

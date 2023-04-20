@@ -1,0 +1,25 @@
+App\Entity\LetterLine:
+    type: entity
+    table: app_letter_line
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            nullable: true
+        position:
+            type: integer
+            nullable: true
+
+    oneToMany:
+        letters:
+            targetEntity: App\Entity\Letter
+            mappedBy: letterLine
+
+    lifecycleCallbacks: {  }

@@ -1,0 +1,96 @@
+app_letter_line_index:
+    options:
+        expose: true
+    path: /app/letter-line/index
+    methods: [GET]
+    defaults:
+        _controller: app.controller.letter_line:listAction
+        _sylius:
+            viewer:
+
+app_letter_line_create:
+    options:
+        expose: true
+    path: /app/letter-line/create
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.letter_line:createAction
+        _sylius:
+            redirect: app_letter_line_update
+            viewer:
+
+app_letter_line_update:
+    options:
+        expose: true
+    path: /app/letter-line/update/{id}
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.letter_line:updateAction
+        _sylius:
+            viewer:
+
+app_letter_line_data:
+    options:
+        expose: true
+    path: /app/letter-line/table
+    methods: [GET,POST]
+    defaults:
+        _controller: app.controller.letter_line:listDataAction
+        _sylius:
+            paginate: 100
+            sortable: true
+            sorting:
+                position: asc
+            viewer:
+                position_property: position
+                columns:
+                    name:
+                        label: Name
+                        property: name
+                        width: 12
+                        type: text
+
+app_letter_line_delete:
+    options:
+        expose: true
+    path: /app/letter-line/delete/{id}
+    methods: [ POST, DELETE ]
+    defaults:
+        _controller: app.controller.letter_line:deleteAction
+
+app_letter_line_batch:
+    options:
+        expose: true
+    path: /app/letter-line/batch
+    methods: [POST]
+    defaults:
+        _controller: app.controller.letter_line:batchAction
+        _sylius:
+            paginate: false
+            criteria:
+                id: $ids
+            batches:
+                delete:
+                    type: delete
+
+app_letter_line_preview:
+    options:
+        expose: true
+    path: /app/letter-line/preview
+    methods: [POST]
+    defaults:
+        _controller: app.controller.letter_line:previewAction
+        _sylius:
+            viewer:
+
+app_letter_line_auto_complete:
+    options:
+        expose: true
+    path: /app/letter-line/auto-complete
+    defaults:
+        _controller: enhavo_form.controller.auto_complete:searchAction
+        _config:
+            class: App\Entity\LetterLine
+            repository:
+                method: findByTerm
+            choice_label: name
