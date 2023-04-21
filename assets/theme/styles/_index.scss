@@ -38,7 +38,7 @@ html {
       .tag-filter-area {
         background-color: $backgroundColorFilter;
         width: 100%;
-        height: 20vh;
+        height: 15vh;
         border-bottom: 1px solid $color1;
         overflow-y: auto;
 
@@ -108,12 +108,12 @@ html {
 
       .letter-area-container {
         background-color: $backgroundColorLetters;
-        height: calc(80vh - 80px);
+        height: calc(85vh - 80px);
         overflow-y: auto;
 
         .letter-area {
           width: 100%;
-          padding: 0 0 180px 0;
+          padding: 10px 0 180px 0;
 
           .letters {
             margin: 0;
@@ -124,6 +124,7 @@ html {
             transition: min-height .3s ease-in-out;
 
             &.line {
+              padding-top: 0;
               padding-bottom: 0;
             }
 

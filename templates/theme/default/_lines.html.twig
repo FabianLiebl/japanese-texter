@@ -2,7 +2,7 @@
     <ul class="letters normal-letters line" data-letters>
         {% for letter in line.letters %}
             {% set groupColor = letter.groupColor %}
-            <li class="letter" data-letter="{{ letter.id }}" data-tags="{{ letter.tagIds|json_encode }}" draggable="true"{% if groupColor %} style="background-color: {{ groupColor }};"{% endif %}>
+            <li class="letter" data-letter="{{ letter.id }}" data-tags="{{ letter.tagIds|json_encode }}" {# draggable="true" #}{% if groupColor %} style="background-color: {{ groupColor }};"{% endif %}>
                 <span class="symbol" data-letter-symbol>{{ letter.letter }}</span>
                 <span class="sound">{{ letter.sound }}</span>
             </li>

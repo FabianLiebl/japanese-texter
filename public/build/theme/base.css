@@ -42,7 +42,7 @@ html body .container header a {
 html body .container .tag-filter-area {
   background-color: #e5f8ff;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   border-bottom: 1px solid #252525;
   overflow-y: auto;
 }
@@ -112,13 +112,13 @@ html body .container .tag-filter-area.dragging-favorite-tag .normal-tags {
 
 html body .container .letter-area-container {
   background-color: #e0ffe4;
-  height: calc(80vh - 80px);
+  height: calc(85vh - 80px);
   overflow-y: auto;
 }
 
 html body .container .letter-area-container .letter-area {
   width: 100%;
-  padding: 0 0 180px 0;
+  padding: 10px 0 180px 0;
 }
 
 html body .container .letter-area-container .letter-area .letters {
@@ -131,6 +131,7 @@ html body .container .letter-area-container .letter-area .letters {
 }
 
 html body .container .letter-area-container .letter-area .letters.line {
+  padding-top: 0;
   padding-bottom: 0;
 }
 
