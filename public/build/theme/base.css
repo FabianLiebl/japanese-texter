@@ -24,6 +24,7 @@ html body .container {
 
 html body .container header {
   display: flex;
+  height: 39px;
   justify-content: space-between;
   background-color: #fff6ab;
   padding: 20px;
@@ -41,8 +42,9 @@ html body .container header a {
 html body .container .tag-filter-area {
   background-color: #e5f8ff;
   width: 100%;
-  max-height: 20vh;
+  height: 20vh;
   border-bottom: 1px solid #252525;
+  overflow-y: auto;
 }
 
 html body .container .tag-filter-area .tags {
@@ -108,13 +110,18 @@ html body .container .tag-filter-area.dragging-favorite-tag .normal-tags {
   min-height: 30px;
 }
 
-html body .container .letter-area {
+html body .container .letter-area-container {
   background-color: #e0ffe4;
-  width: 100%;
-  padding: 0 0 100px 0;
+  height: calc(80vh - 80px);
+  overflow-y: auto;
 }
 
-html body .container .letter-area .letters {
+html body .container .letter-area-container .letter-area {
+  width: 100%;
+  padding: 0 0 180px 0;
+}
+
+html body .container .letter-area-container .letter-area .letters {
   margin: 0;
   padding: 10px;
   display: flex;
@@ -123,11 +130,11 @@ html body .container .letter-area .letters {
   transition: min-height .3s ease-in-out;
 }
 
-html body .container .letter-area .letters.line {
+html body .container .letter-area-container .letter-area .letters.line {
   padding-bottom: 0;
 }
 
-html body .container .letter-area .letters .letter {
+html body .container .letter-area-container .letter-area .letters .letter {
   list-style: none;
   display: block;
   width: 64px;
@@ -142,19 +149,19 @@ html body .container .letter-area .letters .letter {
   cursor: pointer;
 }
 
-html body .container .letter-area .letters .letter:hover {
+html body .container .letter-area-container .letter-area .letters .letter:hover {
   box-shadow: 0 0 2px;
 }
 
-html body .container .letter-area .letters .letter.filtered-out {
+html body .container .letter-area-container .letter-area .letters .letter.filtered-out {
   display: none;
 }
 
-html body .container .letter-area .letters .letter .symbol {
+html body .container .letter-area-container .letter-area .letters .letter .symbol {
   font-size: 30px;
 }
 
-html body .container .letter-area .letters .letter .sound {
+html body .container .letter-area-container .letter-area .letters .letter .sound {
   width: calc(100% - 4px);
   position: absolute;
   bottom: 2px;
@@ -164,12 +171,12 @@ html body .container .letter-area .letters .letter .sound {
   font-size: 12px;
 }
 
-html body .container .letter-area.dragging-letter .favorite-letters {
+html body .container .letter-area-container .letter-area.dragging-letter .favorite-letters {
   background-color: #5eff72;
   min-height: 30px;
 }
 
-html body .container .letter-area.dragging-favorite-letter .normal-letters {
+html body .container .letter-area-container .letter-area.dragging-favorite-letter .normal-letters {
   background-color: #5eff72;
   min-height: 30px;
 }
@@ -343,6 +350,22 @@ html body .container .output-area .output-text-area {
   background-color: #5eff72;
 }
 
+.training .training-container .sheets .sheet.solved.correct .next {
+  display: block;
+}
+
+.training .training-container .sheets .sheet.solved.correct .next .next-link {
+  display: block;
+}
+
+.training .training-container .sheets .sheet.solved.can-continue .next {
+  display: block;
+}
+
+.training .training-container .sheets .sheet.solved.can-continue .next .next-link {
+  display: block;
+}
+
 .training .training-container .sheets .sheet.solved .prompt-container .prompt {
   background-color: #ffd4d4;
 }
@@ -362,12 +385,10 @@ html body .container .output-area .output-text-area {
 
 .training .training-container .sheets .sheet.solved .next {
   padding: 20px 0;
-  display: block;
   text-align: center;
 }
 
 .training .training-container .sheets .sheet.solved .next .next-link {
-  display: block;
   padding: 20px 40px;
   background-color: #76dfff;
   cursor: pointer;

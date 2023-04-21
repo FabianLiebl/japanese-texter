@@ -39,6 +39,9 @@ export default class Training
                 this.numCorrect++;
             } else {
                 this.numWrong++;
+                setTimeout(() => {
+                    this.$currentSheet.addClass('can-continue');
+                }, 1000);
             }
             this.sendResult(this.currentLetterId, correct, chosenLetterId);
         }

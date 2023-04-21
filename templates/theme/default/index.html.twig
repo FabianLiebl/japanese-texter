@@ -18,14 +18,10 @@
             {% include 'theme/default/_tags.html.twig' with { 'tags': tags } %}
         </ul>
     </div>
-    <div class="letter-area" data-letter-area>
-{#        <ul class="letters favorite-letters" data-favorite-letters>#}
-{#            {% include 'theme/default/_letters.html.twig' with { 'letters': favoriteLetters } %}#}
-{#        </ul>#}
-{#        <ul class="letters normal-letters" data-letters>#}
-{#            {% include 'theme/default/_letters.html.twig' with { 'letters': letters } %}#}
-{#        </ul>#}
-        {% include 'theme/default/_lines.html.twig' with { 'lines': lines } %}
+    <div class="letter-area-container">
+        <div class="letter-area" data-letter-area>
+            {% include 'theme/default/_lines.html.twig' with { 'lines': lines } %}
+        </div>
     </div>
     <div class="output-area" data-output-area>
         <textarea class="output-text-area" data-output-field></textarea>

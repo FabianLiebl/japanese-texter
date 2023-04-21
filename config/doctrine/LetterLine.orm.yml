@@ -21,5 +21,6 @@ App\Entity\LetterLine:
         letters:
             targetEntity: App\Entity\Letter
             mappedBy: letterLine
+            orderBy: {'position': 'asc'}
 
     lifecycleCallbacks: {  }

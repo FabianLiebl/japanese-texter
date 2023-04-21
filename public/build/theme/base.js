@@ -371,6 +371,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     }
 
     Training.prototype.choiceClick = function ($target) {
+      var _this = this;
+
       if (!this.solved) {
         this.solved = true;
         var correct = $target.data('choice') == 'correct';
@@ -382,6 +384,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
           this.numCorrect++;
         } else {
           this.numWrong++;
+          setTimeout(function () {
+            _this.$currentSheet.addClass('can-continue');
+          }, 1000);
         }
 
         this.sendResult(this.currentLetterId, correct, chosenLetterId);

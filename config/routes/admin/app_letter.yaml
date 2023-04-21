@@ -58,7 +58,13 @@ app_letter_data:
                     tags:
                         label: Tags
                         property: tagNames
-                        width: 8
+                        width: 6
+                        type: text
+                        condition: "desktop"
+                    letterLine:
+                        label: Line
+                        property: letterLine.name
+                        width: 2
                         type: text
                         condition: "desktop"
 

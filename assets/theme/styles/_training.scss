@@ -121,16 +121,24 @@
           }
         }
         &.solved {
-          //h2 {
-          //  background-color: $backgroundColorTrainingWrong;
-          //}
           &.correct {
-            //h2 {
-            //  background-color: $backgroundColorTrainingCorrect;
-            //}
             .prompt-container {
               .prompt {
                 background-color: $backgroundColorTrainingCorrect;
+              }
+            }
+            .next {
+              display: block;
+              .next-link {
+                display: block;
+              }
+            }
+          }
+          &.can-continue {
+            .next {
+              display: block;
+              .next-link {
+                display: block;
               }
             }
           }
@@ -153,10 +161,8 @@
           }
           .next {
             padding: 20px 0;
-            display: block;
             text-align: center;
             .next-link {
-              display: block;
               padding: 20px 40px;
               background-color: $backgroundColorTrainingPrompt;
               cursor: pointer;
