@@ -1658,16 +1658,16 @@
         },
         {
             "name": "enhavo/app-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoAppBundle.git",
-                "reference": "56869a156b600127cd3c02375cf962b968983e67"
+                "reference": "24611c6b85ff91a9a8fa16a8d19a2b24d0eda912"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoAppBundle/zipball/56869a156b600127cd3c02375cf962b968983e67",
-                "reference": "56869a156b600127cd3c02375cf962b968983e67",
+                "url": "https://api.github.com/repos/enhavo/EnhavoAppBundle/zipball/24611c6b85ff91a9a8fa16a8d19a2b24d0eda912",
+                "reference": "24611c6b85ff91a9a8fa16a8d19a2b24d0eda912",
                 "shasum": ""
             },
             "require": {
@@ -1722,17 +1722,17 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoAppBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoAppBundle/tree/v0.10.13"
             },
-            "time": "2021-07-09T06:50:30+00:00"
+            "time": "2023-01-05T09:37:17+00:00"
         },
         {
             "name": "enhavo/backup-bundle",
-            "version": "v0.10.4",
+            "version": "v0.10.6",
             "dist": {
                 "type": "zip",
-                "url": "https://enhavo.repo.packagist.com/xq-web/dists/enhavo/backup-bundle/0.10.4.0/fc8ae1f5df480315f7e936d9ff25788adc1d730b.zip",
-                "reference": "fc8ae1f5df480315f7e936d9ff25788adc1d730b",
+                "url": "https://enhavo.repo.packagist.com/xq-web/dists/enhavo/backup-bundle/0.10.6.0/1bb8eb98b8c268c9fd88db5aff64002cb7ffdd40.zip",
+                "reference": "1bb8eb98b8c268c9fd88db5aff64002cb7ffdd40",
                 "mirrors": [
                     {
                         "url": "https://enhavo.repo.packagist.com/xq-web/dists/%package%/%version%/r%reference%.%type%",
@@ -1772,23 +1772,23 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoBackupBundle/tree/v0.10.4",
+                "source": "https://github.com/enhavo/EnhavoBackupBundle/tree/v0.10.6",
                 "issues": "https://github.com/enhavo/EnhavoBackupBundle/issues"
             },
-            "time": "2021-08-04T05:59:57+00:00"
+            "time": "2021-12-05T20:29:33+00:00"
         },
         {
             "name": "enhavo/block-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoBlockBundle.git",
-                "reference": "8bda6d162fcdc6b8294069b785656f0ac50fed25"
+                "reference": "a484766b2515879943459118157627e4f1090ee6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoBlockBundle/zipball/8bda6d162fcdc6b8294069b785656f0ac50fed25",
-                "reference": "8bda6d162fcdc6b8294069b785656f0ac50fed25",
+                "url": "https://api.github.com/repos/enhavo/EnhavoBlockBundle/zipball/a484766b2515879943459118157627e4f1090ee6",
+                "reference": "a484766b2515879943459118157627e4f1090ee6",
                 "shasum": ""
             },
             "require": {
@@ -1824,22 +1824,22 @@
             ],
             "support": {
                 "issues": "https://github.com/enhavo/EnhavoBlockBundle/issues",
-                "source": "https://github.com/enhavo/EnhavoBlockBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoBlockBundle/tree/v0.10.13"
             },
-            "time": "2021-04-26T04:50:15+00:00"
+            "time": "2022-08-30T16:43:29+00:00"
         },
         {
             "name": "enhavo/content-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoContentBundle.git",
-                "reference": "4040b1d4477946a520abd8f252ef0081ffd87694"
+                "reference": "bd9f11692a7cd9139ca63fb06c547730b476e796"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoContentBundle/zipball/4040b1d4477946a520abd8f252ef0081ffd87694",
-                "reference": "4040b1d4477946a520abd8f252ef0081ffd87694",
+                "url": "https://api.github.com/repos/enhavo/EnhavoContentBundle/zipball/bd9f11692a7cd9139ca63fb06c547730b476e796",
+                "reference": "bd9f11692a7cd9139ca63fb06c547730b476e796",
                 "shasum": ""
             },
             "require": {
@@ -1871,13 +1871,13 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoContentBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoContentBundle/tree/v0.10.13"
             },
-            "time": "2021-07-09T07:14:30+00:00"
+            "time": "2022-11-16T12:44:54+00:00"
         },
         {
             "name": "enhavo/dashboard-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoDashboardBundle.git",
@@ -1918,22 +1918,22 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoDashboardBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoDashboardBundle/tree/v0.10.13"
             },
             "time": "2021-04-26T04:50:15+00:00"
         },
         {
             "name": "enhavo/doctrine-extension-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoDoctrineExtensionBundle.git",
-                "reference": "43166fdcd5fbd91018707a35feada24f508b1778"
+                "reference": "5554f5941970460f4dc5f8d00360f79b952efd18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoDoctrineExtensionBundle/zipball/43166fdcd5fbd91018707a35feada24f508b1778",
-                "reference": "43166fdcd5fbd91018707a35feada24f508b1778",
+                "url": "https://api.github.com/repos/enhavo/EnhavoDoctrineExtensionBundle/zipball/5554f5941970460f4dc5f8d00360f79b952efd18",
+                "reference": "5554f5941970460f4dc5f8d00360f79b952efd18",
                 "shasum": ""
             },
             "require": {
@@ -1966,22 +1966,22 @@
             ],
             "support": {
                 "issues": "https://github.com/enhavo/EnhavoDoctrineExtensionBundle/issues",
-                "source": "https://github.com/enhavo/EnhavoDoctrineExtensionBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoDoctrineExtensionBundle/tree/v0.10.13"
             },
-            "time": "2021-07-12T10:17:44+00:00"
+            "time": "2021-09-29T08:41:56+00:00"
         },
         {
             "name": "enhavo/form-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoFormBundle.git",
-                "reference": "d6d24297d947de0d4ae135fccf16b3973c13312e"
+                "reference": "326c5fa57c5a936624c7fa37a477990181825b5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoFormBundle/zipball/d6d24297d947de0d4ae135fccf16b3973c13312e",
-                "reference": "d6d24297d947de0d4ae135fccf16b3973c13312e",
+                "url": "https://api.github.com/repos/enhavo/EnhavoFormBundle/zipball/326c5fa57c5a936624c7fa37a477990181825b5c",
+                "reference": "326c5fa57c5a936624c7fa37a477990181825b5c",
                 "shasum": ""
             },
             "require": {
@@ -2015,22 +2015,22 @@
             ],
             "support": {
                 "issues": "https://github.com/enhavo/EnhavoFormBundle/issues",
-                "source": "https://github.com/enhavo/EnhavoFormBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoFormBundle/tree/v0.10.13"
             },
-            "time": "2021-09-14T09:08:26+00:00"
+            "time": "2022-09-05T04:40:31+00:00"
         },
         {
             "name": "enhavo/media-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoMediaBundle.git",
-                "reference": "f46f840671adaa11b96e580100f66bc0bdf68113"
+                "reference": "1815a772417c32eedebfc219d1ae0c76caccd171"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoMediaBundle/zipball/f46f840671adaa11b96e580100f66bc0bdf68113",
-                "reference": "f46f840671adaa11b96e580100f66bc0bdf68113",
+                "url": "https://api.github.com/repos/enhavo/EnhavoMediaBundle/zipball/1815a772417c32eedebfc219d1ae0c76caccd171",
+                "reference": "1815a772417c32eedebfc219d1ae0c76caccd171",
                 "shasum": ""
             },
             "require": {
@@ -2066,13 +2066,13 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoMediaBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoMediaBundle/tree/v0.10.13"
             },
-            "time": "2021-07-26T06:42:48+00:00"
+            "time": "2021-11-01T22:52:50+00:00"
         },
         {
             "name": "enhavo/metadata",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/Metadata.git",
@@ -2119,16 +2119,16 @@
         },
         {
             "name": "enhavo/navigation-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoNavigationBundle.git",
-                "reference": "9777c5760645cb9d28d4de356751656585da08b4"
+                "reference": "c656653fd4b4d3442a320c980d2ab282fc83c01f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoNavigationBundle/zipball/9777c5760645cb9d28d4de356751656585da08b4",
-                "reference": "9777c5760645cb9d28d4de356751656585da08b4",
+                "url": "https://api.github.com/repos/enhavo/EnhavoNavigationBundle/zipball/c656653fd4b4d3442a320c980d2ab282fc83c01f",
+                "reference": "c656653fd4b4d3442a320c980d2ab282fc83c01f",
                 "shasum": ""
             },
             "require": {
@@ -2162,22 +2162,22 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoNavigationBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoNavigationBundle/tree/v0.10.13"
             },
-            "time": "2021-07-26T14:58:09+00:00"
+            "time": "2021-09-28T14:08:15+00:00"
         },
         {
             "name": "enhavo/page-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoPageBundle.git",
-                "reference": "c65589a49097ded8ffb6ce6829d60ee1a493dcae"
+                "reference": "43ca9753169947fa1a83f2e8cc4739011cb97da9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoPageBundle/zipball/c65589a49097ded8ffb6ce6829d60ee1a493dcae",
-                "reference": "c65589a49097ded8ffb6ce6829d60ee1a493dcae",
+                "url": "https://api.github.com/repos/enhavo/EnhavoPageBundle/zipball/43ca9753169947fa1a83f2e8cc4739011cb97da9",
+                "reference": "43ca9753169947fa1a83f2e8cc4739011cb97da9",
                 "shasum": ""
             },
             "require": {
@@ -2214,22 +2214,22 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoPageBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoPageBundle/tree/v0.10.13"
             },
-            "time": "2021-07-15T03:59:40+00:00"
+            "time": "2021-10-16T21:19:02+00:00"
         },
         {
             "name": "enhavo/routing-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoRoutingBundle.git",
-                "reference": "6e1683ac8e11be206394586a54df796725adf049"
+                "reference": "a4035366adc21a66e05bfe8bb85bf6bee7888741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoRoutingBundle/zipball/6e1683ac8e11be206394586a54df796725adf049",
-                "reference": "6e1683ac8e11be206394586a54df796725adf049",
+                "url": "https://api.github.com/repos/enhavo/EnhavoRoutingBundle/zipball/a4035366adc21a66e05bfe8bb85bf6bee7888741",
+                "reference": "a4035366adc21a66e05bfe8bb85bf6bee7888741",
                 "shasum": ""
             },
             "require": {
@@ -2265,13 +2265,13 @@
             ],
             "support": {
                 "issues": "https://github.com/enhavo/EnhavoRoutingBundle/issues",
-                "source": "https://github.com/enhavo/EnhavoRoutingBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoRoutingBundle/tree/v0.10.13"
             },
-            "time": "2021-04-26T04:50:15+00:00"
+            "time": "2023-01-26T08:46:19+00:00"
         },
         {
             "name": "enhavo/setting-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoSettingBundle.git",
@@ -2314,13 +2314,13 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoSettingBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoSettingBundle/tree/v0.10.13"
             },
             "time": "2021-06-09T09:52:33+00:00"
         },
         {
             "name": "enhavo/type",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/Type.git",
@@ -2362,22 +2362,22 @@
             ],
             "support": {
                 "issues": "https://github.com/enhavo/Type/issues",
-                "source": "https://github.com/enhavo/Type/tree/v0.10.7"
+                "source": "https://github.com/enhavo/Type/tree/v0.10.13"
             },
             "time": "2021-06-09T09:52:33+00:00"
         },
         {
             "name": "enhavo/user-bundle",
-            "version": "v0.10.7",
+            "version": "v0.10.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enhavo/EnhavoUserBundle.git",
-                "reference": "e960ca4ecdfb4b807c255023ac3c75166683ab7a"
+                "reference": "9df58fdaeeb59533041c8953fe32aee17e5a68e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enhavo/EnhavoUserBundle/zipball/e960ca4ecdfb4b807c255023ac3c75166683ab7a",
-                "reference": "e960ca4ecdfb4b807c255023ac3c75166683ab7a",
+                "url": "https://api.github.com/repos/enhavo/EnhavoUserBundle/zipball/9df58fdaeeb59533041c8953fe32aee17e5a68e5",
+                "reference": "9df58fdaeeb59533041c8953fe32aee17e5a68e5",
                 "shasum": ""
             },
             "require": {
@@ -2412,9 +2412,9 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/enhavo/EnhavoUserBundle/tree/v0.10.7"
+                "source": "https://github.com/enhavo/EnhavoUserBundle/tree/v0.10.13"
             },
-            "time": "2021-07-15T03:59:48+00:00"
+            "time": "2023-05-23T16:31:30+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -11561,5 +11561,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

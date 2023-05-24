@@ -13,7 +13,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-
   if ($('[data-training]').length > 0) {
     new Training_1["default"]();
   } else if ($('[data-training-letters]').length > 0) {
@@ -39,10 +38,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-
-  var Application =
-  /** @class */
-  function () {
+  var Application = /** @class */function () {
     function Application() {
       this.$currentlyDragged = null;
       this.textFieldCursorPosition = 0;
@@ -54,10 +50,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       this.initLetterClick();
       this.initFilter();
     }
-
     Application.prototype.initFavoriteTags = function () {
       var _this = this;
-
       var self = this;
       this.$filterArea.find('[data-favorite-tags]').find('[data-tag]').data('favorite', 1);
       this.$filterArea.find('[data-tags]').find('[data-tag]').data('favorite', 0);
@@ -67,7 +61,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         } else {
           self.$filterArea.addClass('dragging-tag');
         }
-
         self.$currentlyDragged = $(this);
       });
       var $favoriteTags = this.$filterArea.find('[data-favorite-tags]');
@@ -79,21 +72,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         if (self.$currentlyDragged == null) {
           return;
         }
-
         if (!self.$currentlyDragged.data('tag')) {
           return;
         }
-
         if (self.$currentlyDragged.data('favorite') == 0) {
           _this.$currentlyDragged.appendTo($favoriteTags);
-
           _this.$currentlyDragged.data('favorite', 1);
-
           $.ajax({
             url: '/tag/favorite/' + _this.$currentlyDragged.data('tag')
           });
         }
-
         _this.$currentlyDragged = null;
       });
       var $normalTags = this.$filterArea.find('[data-tags]');
@@ -105,33 +93,25 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         if (self.$currentlyDragged == null) {
           return;
         }
-
         if (!self.$currentlyDragged.data('tag')) {
           return;
         }
-
         if (self.$currentlyDragged.data('favorite') == 1) {
           _this.$currentlyDragged.appendTo($normalTags);
-
           _this.$currentlyDragged.data('favorite', 0);
-
           $.ajax({
             url: '/tag/unfavorite/' + _this.$currentlyDragged.data('tag')
           });
         }
-
         _this.$currentlyDragged = null;
       });
       $(document).on('dragend', function () {
         _this.$filterArea.removeClass('dragging-favorite-tag').removeClass('dragging-tag');
-
         _this.$currentlyDragged = null;
       });
     };
-
     Application.prototype.initFavoriteLetters = function () {
       var _this = this;
-
       var self = this;
       this.$letterArea.find('[data-favorite-letters]').find('[data-letter]').data('favorite', 1);
       this.$letterArea.find('[data-letters]').find('[data-letter]').data('favorite', 0);
@@ -141,7 +121,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         } else {
           self.$letterArea.addClass('dragging-letter');
         }
-
         self.$currentlyDragged = $(this);
       });
       var $favoriteLetters = this.$letterArea.find('[data-favorite-letters]');
@@ -153,21 +132,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         if (self.$currentlyDragged == null) {
           return;
         }
-
         if (!self.$currentlyDragged.data('letter')) {
           return;
         }
-
         if (self.$currentlyDragged.data('favorite') == 0) {
           _this.$currentlyDragged.appendTo($favoriteLetters);
-
           _this.$currentlyDragged.data('favorite', 1);
-
           $.ajax({
             url: '/letter/favorite/' + _this.$currentlyDragged.data('letter')
           });
         }
-
         _this.$currentlyDragged = null;
       });
       var $normalLetters = this.$letterArea.find('[data-letters]');
@@ -179,33 +153,25 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         if (self.$currentlyDragged == null) {
           return;
         }
-
         if (!self.$currentlyDragged.data('letter')) {
           return;
         }
-
         if (self.$currentlyDragged.data('favorite') == 1) {
           _this.$currentlyDragged.appendTo($normalLetters);
-
           _this.$currentlyDragged.data('favorite', 0);
-
           $.ajax({
             url: '/letter/unfavorite/' + _this.$currentlyDragged.data('letter')
           });
         }
-
         _this.$currentlyDragged = null;
       });
       $(document).on('dragend', function () {
         _this.$letterArea.removeClass('dragging-favorite-letter').removeClass('dragging-letter');
-
         _this.$currentlyDragged = null;
       });
     };
-
     Application.prototype.initLetterClick = function () {
       var _this = this;
-
       var self = this;
       self.$dataOutputField.on('click keyup', function () {
         _this.textFieldCursorPosition = self.$dataOutputField.prop('selectionStart');
@@ -220,47 +186,40 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         self.$dataOutputField.trigger('focus');
       });
     };
-
     Application.prototype.initFilter = function () {
-      var self = this; // this.$filterArea.find('[data-tag]').on('click', function () {
+      var self = this;
+      // this.$filterArea.find('[data-tag]').on('click', function () {
       //     $(this).toggleClass('active');
       //     self.updateFilters();
       // });
-
       this.$filterArea.find('[data-tag]').on('mouseup', function (event) {
         switch (event.button) {
           case 0:
             $(this).removeClass('not');
             $(this).toggleClass('active');
             break;
-
           case 1:
             $(this).removeClass('active');
             $(this).toggleClass('not');
             break;
         }
-
         self.updateFilters();
       });
     };
-
     Application.prototype.updateFilters = function () {
       var activeFilterOrGroups = [];
       var activeFiltersWithoutOrGroup = [];
       var activeNotFilters = [];
       this.$filterArea.find('[data-tag].active').each(function () {
         var orGroupName = $(this).data('or-group');
-
         if (orGroupName) {
           for (var _i = 0, activeFilterOrGroups_1 = activeFilterOrGroups; _i < activeFilterOrGroups_1.length; _i++) {
             var orGroup = activeFilterOrGroups_1[_i];
-
             if (orGroup.name == orGroupName) {
               orGroup.filters.push($(this).data('tag'));
               return;
             }
           }
-
           var newOrGroup = new OrGroup(orGroupName);
           newOrGroup.filters.push($(this).data('tag'));
           activeFilterOrGroups.push(newOrGroup);
@@ -273,61 +232,46 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
       });
       this.$letterArea.find('[data-letter]').each(function () {
         var ownTags = $(this).data('tags');
-
         for (var _i = 0, activeNotFilters_1 = activeNotFilters; _i < activeNotFilters_1.length; _i++) {
           var filter = activeNotFilters_1[_i];
-
           if (ownTags.hasOwnProperty(filter)) {
             $(this).addClass('filtered-out');
             return;
           }
         }
-
         for (var _a = 0, activeFiltersWithoutOrGroup_1 = activeFiltersWithoutOrGroup; _a < activeFiltersWithoutOrGroup_1.length; _a++) {
           var filter = activeFiltersWithoutOrGroup_1[_a];
-
           if (!ownTags.hasOwnProperty(filter)) {
             $(this).addClass('filtered-out');
             return;
           }
         }
-
         for (var _b = 0, activeFilterOrGroups_2 = activeFilterOrGroups; _b < activeFilterOrGroups_2.length; _b++) {
           var orGroup = activeFilterOrGroups_2[_b];
           var hasOne = false;
-
           for (var _c = 0, _d = orGroup.filters; _c < _d.length; _c++) {
             var filter = _d[_c];
-
             if (ownTags.hasOwnProperty(filter)) {
               hasOne = true;
               break;
             }
           }
-
           if (!hasOne) {
             $(this).addClass('filtered-out');
             return;
           }
         }
-
         $(this).removeClass('filtered-out');
       });
     };
-
     return Application;
   }();
-
   exports["default"] = Application;
-
-  var OrGroup =
-  /** @class */
-  function () {
+  var OrGroup = /** @class */function () {
     function OrGroup(name) {
       this.name = name;
       this.filters = [];
     }
-
     return OrGroup;
   }();
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -348,13 +292,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-
-  var Training =
-  /** @class */
-  function () {
+  var Training = /** @class */function () {
     function Training() {
       var _this = this;
-
       this.numCorrect = 0;
       this.numWrong = 0;
       this.currentIndex = -1;
@@ -369,16 +309,13 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         _this.changeScore($(event.target));
       });
     }
-
     Training.prototype.choiceClick = function ($target) {
       var _this = this;
-
       if (!this.solved) {
         this.solved = true;
         var correct = $target.data('choice') == 'correct';
         var chosenLetterId = $target.data('letter-id');
         this.$currentSheet.addClass('solved');
-
         if (correct) {
           this.$currentSheet.addClass('correct');
           this.numCorrect++;
@@ -388,56 +325,47 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
             _this.$currentSheet.addClass('can-continue');
           }, 1000);
         }
-
         this.sendResult(this.currentLetterId, correct, chosenLetterId);
       }
     };
-
     Training.prototype.nextSheet = function () {
       $('[data-sheet]').removeClass('active');
       this.currentIndex++;
       this.$currentSheet = $('[data-sheet="' + this.currentIndex + '"]');
       this.solved = false;
-
       if (this.$currentSheet.length > 0) {
         this.$currentSheet.addClass('active');
         this.currentLetterId = this.$currentSheet.data('letter');
       } else {
-        location.reload(); // $('[data-result-message]').html('Finished, ' + this.numCorrect + ' correct and ' + this.numWrong + ' errors.');
+        location.reload();
+        // $('[data-result-message]').html('Finished, ' + this.numCorrect + ' correct and ' + this.numWrong + ' errors.');
         // $('[data-sheet="result"]').addClass('active');
       }
     };
 
     Training.prototype.sendResult = function (letterId, correct, chosenLetterId) {
       var url = '/training/adjust-letter-score/' + letterId + '/';
-
       if (correct) {
         url += '1';
       } else {
         url += '0';
       }
-
       axios_1["default"].get(url);
-
       if (!correct) {
         var url_1 = '/training/adjust-letter-score/' + chosenLetterId + '/0';
         axios_1["default"].get(url_1);
       }
     };
-
     Training.prototype.changeScore = function ($target) {
       if ($target.hasClass('clicked')) {
         return;
       }
-
       $target.addClass('clicked');
       var url = $target.data('change-score');
       axios_1["default"].get(url);
     };
-
     return Training;
   }();
-
   exports["default"] = Training;
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -457,20 +385,14 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-
-  var TrainingLetters =
-  /** @class */
-  function () {
+  var TrainingLetters = /** @class */function () {
     function TrainingLetters() {
       var _this = this;
-
       $('[data-change-score]').on('click', function (event) {
         event.preventDefault();
-
         _this.changeLetterScore($(event.target));
       });
     }
-
     TrainingLetters.prototype.changeLetterScore = function ($target) {
       var url = $target.prop('href');
       var $letter = $target.closest('[data-letter]');
@@ -481,10 +403,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         }
       });
     };
-
     return TrainingLetters;
   }();
-
   exports["default"] = TrainingLetters;
 }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
