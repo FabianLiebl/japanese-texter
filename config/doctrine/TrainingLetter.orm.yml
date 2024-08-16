@@ -12,6 +12,8 @@ App\Entity\TrainingLetter:
     fields:
         score:
             type: integer
+        active:
+            type: boolean
 
     manyToOne:
         letter:

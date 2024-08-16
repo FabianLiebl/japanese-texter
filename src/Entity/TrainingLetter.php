@@ -12,6 +12,9 @@ class TrainingLetter
     /** @var ?int */
     private $score = 100;
 
+    /** @var bool */
+    private $active = true;
+
     /** @var ?Letter */
     private $letter;
 
@@ -51,6 +54,16 @@ class TrainingLetter
             $score = TrainingManager::SCORE_BASE;
         }
         $this->score = $score;
+    }
+
+    public function isActive(): bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): void
+    {
+        $this->active = $active;
     }
 
     /**

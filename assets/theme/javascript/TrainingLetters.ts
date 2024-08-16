@@ -9,6 +9,18 @@ export default class TrainingLetters
             event.preventDefault();
             this.changeLetterScore($(event.target));
         });
+        $('[data-toggle-active]').on('click', (event) => {
+            event.preventDefault();
+            this.toggleLetterActive($(event.target));
+        });
+        $('[data-switch-mode]').on('click', (event) => {
+            event.preventDefault();
+            if ($(event.target).data('switch-mode') == 'active') {
+                $('[data-training-letters]').addClass('mode-active');
+            } else {
+                $('[data-training-letters]').removeClass('mode-active');
+            }
+        });
     }
 
     private changeLetterScore($target: JQuery)
@@ -25,6 +37,22 @@ export default class TrainingLetters
                         .addClass(response.data.scoreClass)
                     ;
                     $letter.find('[data-score]').html(response.data.score);
+                }
+            });
+    }
+
+    private toggleLetterActive($target: JQuery)
+    {
+        let url = $target.prop('href');
+        let $letter = $target.closest('[data-letter]');
+        axios.get(url)
+            .then((response) => {
+                if (response.data.success) {
+                    if (response.data.letterActive) {
+                        $letter.removeClass('inactive');
+                    } else {
+                        $letter.addClass('inactive');
+                    }
                 }
             });
     }

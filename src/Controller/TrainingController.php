@@ -122,4 +122,23 @@ class TrainingController extends AbstractController
             'scoreClass' => $letter->getScoreClass(),
         ]);
     }
+
+    public function toggleLetterActiveAction(Request $request)
+    {
+        $letterId = $request->get('letterId');
+
+        /** @var ?TrainingLetter $letter */
+        $letter = $this->entityManager->getRepository(TrainingLetter::class)->find($letterId);
+        if (!$letter) {
+            throw new NotFoundHttpException();
+        }
+
+        $this->trainingManager->toggleLetterActive($letter);
+        $this->entityManager->flush();
+
+        return new JsonResponse([
+            'success' => true,
+            'letterActive' => $letter->isActive(),
+        ]);
+    }
 }

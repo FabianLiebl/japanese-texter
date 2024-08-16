@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Letter;
 use App\Entity\TrainingLetter;
+use Enhavo\Bundle\FormBundle\Form\Type\BooleanType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -36,6 +37,9 @@ class TrainingLetterType extends AbstractType
         ]);
         $builder->add('score', NumberType::class, [
             'label' => 'Current score',
+        ]);
+        $builder->add('active', BooleanType::class, [
+            'label' => 'Active',
         ]);
     }
 

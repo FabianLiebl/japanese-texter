@@ -59,14 +59,21 @@ class TrainingManager
         $letter->setScore(max(1, min(self::SCORE_MAX, $letter->getScore() + $value)));
     }
 
+    public function toggleLetterActive(TrainingLetter $letter)
+    {
+        $letter->setActive(!$letter->isActive());
+    }
+
     private function chooseLettersByScore(Training $training): array
     {
         $result = [];
         $totalScore = 0;
         $letterList = [];
         foreach($training->getLetters() as $letter) {
-            $totalScore += $letter->getScore();
-            $letterList []= $letter;
+            if ($letter->isActive()) {
+                $totalScore += $letter->getScore();
+                $letterList []= $letter;
+            }
         }
 
         $numEntries = min(self::NUM_ENTRIES, count($letterList));

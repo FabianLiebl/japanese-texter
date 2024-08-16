@@ -4,18 +4,23 @@
     <div class="training-list-letters" data-training-letters>
         <div class="list-letters-container">
             <h2>{{ training.name }} letters</h2>
+            <p class="description description-score">Click to adjust dynamic score</p>
+            <p class="description description-active">Click to activate/deactivate</p>
             <div class="letters-container">
                 {% for letter in training.letters %}
-                    <div class="letter {{ letter.scoreClass }}" data-letter>
+                    <div class="letter {{ letter.scoreClass }} {% if not letter.active %}inactive{% endif %}" data-letter>
                         <span class="symbol">{{ letter.letter.letter }}</span>
                         <span class="sound">{{ letter.letter.sound }}</span>
                         <span class="score" data-score>{{ letter.score }}</span>
                         <a class="change-score plus" href="{{ path('app_frontend_training_change_letter_score', { letterId: letter.id, value: 5 }) }}" data-change-score>+</a>
                         <a class="change-score minus" href="{{ path('app_frontend_training_change_letter_score', { letterId: letter.id, value: -5 }) }}" data-change-score>-</a>
+                        <a class="toggle-active" href="{{ path('app_frontend_training_toggle_letter_active', { letterId: letter.id }) }}" data-toggle-active></a>
                     </div>
                 {% endfor %}
             </div>
             <div class="back-link">
+                <a href="#" class="link undecorated-link switch-mode-active" data-switch-mode="active">Active/Inactive</a>
+                <a href="#" class="link undecorated-link switch-mode-score" data-switch-mode="score">Score +/-</a>
                 <a href="{{ path('app_frontend_training_index') }}" class="link undecorated-link">&lt; Back to Index</a>
             </div>
         </div>

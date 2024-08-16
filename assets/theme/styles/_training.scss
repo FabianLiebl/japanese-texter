@@ -175,32 +175,36 @@
 }
 
 .training-list-letters {
-  background-color: $backgroundColorLetters;
   padding: 5% 10%;
+  background-color: $backgroundColorLetters;
+
   .list-letters-container {
     width: 360px;
-    padding: 20px 50px 50px 50px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    padding: 20px 50px 50px 50px; margin-left: 50%;
     background-color: $backgroundColorTraining;
+    transform: translateX(-50%);
+
     h2 {
       text-align: center;
     }
+    .description {
+      font-size: 14px; text-align: center;
+
+      &.description-active {
+        display: none;
+      }
+    }
     .letters-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+
       .letter {
-        display: block;
-        width: 64px;
-        height: 64px;
         flex: 0 0 64px;
-        border: 1px solid $color1;
-        padding: 2px;
-        margin: 1px;
-        text-align: center;
+        display: block;
         position: relative;
+        width: 64px; height: 64px;
+        border: 1px solid $color1; padding: 2px; margin: 1px;
+        text-align: center;
+
         &.good {
           background-color: $backgroundColorTrainingListLettersGood;
         }
@@ -210,40 +214,36 @@
         &.bad {
           background-color: $backgroundColorTrainingListLettersBad;
         }
+        &.inactive {
+          background-color: $backgroundColorTrainingListLettersInactive;
+        }
+
         .symbol {
           font-size: 30px;
         }
         .sound {
           display: block;
+          position: absolute; bottom: 2px; left: 0;
           width: calc(100% - 4px);
-          position: absolute;
-          bottom: 2px;
-          left: 0;
-          overflow: hidden;
           padding: 2px;
           font-size: 12px;
+          overflow: hidden;
         }
         .score {
           display: none;
+          position: absolute; bottom: 2px; left: 0;
           width: calc(100% - 4px);
-          position: absolute;
-          bottom: 2px;
-          left: 0;
-          overflow: hidden;
           padding: 2px;
           font-size: 12px;
+          overflow: hidden;
         }
         .change-score {
           display: none;
-          position: absolute;
-          top: 0;
+          position: absolute; top: 0;
           width: 20px;
-          font-size: 20px;
-          font-weight: bold;
-          line-height: 70px;
-          text-decoration: none;
-          color: $color1;
-          background-color: rgba(0,0,0,0.1);
+          font-size: 20px; font-weight: bold; line-height: 70px; text-decoration: none;
+          color: $color1; background-color: rgba(0,0,0,0.1);
+
           &.plus {
             right: 0;
           }
@@ -254,6 +254,12 @@
             background-color: rgba(0,0,0,0.2);
           }
         }
+        .toggle-active {
+          display: none;
+          position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+          background-color: rgba(0,0,0,0.1);
+        }
+
         &:hover {
           .change-score {
             display: block;
@@ -265,15 +271,73 @@
             display: block;
           }
         }
+
+        &.inactive {
+          &:hover {
+            .change-score {
+              display: none;
+            }
+            .sound {
+              display: block;
+            }
+            .score {
+              display: none;
+            }
+          }
+        }
       }
     }
     .back-link {
+      display: flex; flex-direction: column; gap: 20px;
       margin-top: 20px;
       .link {
         display: block;
         padding: 20px 0;
         text-align: center;
         background-color: $backgroundColorTrainingPrompt;
+        &.switch-mode-score {
+          display: none;
+        }
+      }
+    }
+  }
+  &.mode-active {
+    .list-letters-container {
+      .description {
+        &.description-active {
+          display: block;
+        }
+        &.description-score {
+          display: none;
+        }
+      }
+      .letters-container {
+        .letter {
+          &:hover {
+            .toggle-active {
+              display: block;
+            }
+            .change-score {
+              display: none;
+            }
+            .sound {
+              display: block;
+            }
+            .score {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .back-link {
+      .link {
+        &.switch-mode-score {
+          display: block;
+        }
+        &.switch-mode-active {
+          display: none;
+        }
       }
     }
   }

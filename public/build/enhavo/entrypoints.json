@@ -2,107 +2,103 @@
   "entrypoints": {
     "enhavo/app/dummy": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/enhavo/app/dummy.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/enhavo/app/dummy.9c2635c0.js"
       ]
     },
     "enhavo/app/delete": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/app/delete.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/app/delete.b53d26f0.js"
       ]
     },
     "enhavo/app/form": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/app/form.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/app/form.4ef883c4.js"
       ],
       "css": [
-        "/build/enhavo/enhavo/app/form.css"
+        "/build/enhavo/enhavo/app/form.f8c2bc26.css"
       ]
     },
     "enhavo/app/index": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/app/index.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/app/index.53f51dc1.js"
       ]
     },
     "enhavo/app/list": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/app/list.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/app/list.8cfd5930.js"
       ]
     },
     "enhavo/app/main": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/app/main.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/app/main.9a46f96f.js"
       ]
     },
     "enhavo/app/preview": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/app/preview.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/app/preview.405709e6.js"
       ]
     },
     "enhavo/app/view": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/0.js",
-        "/build/enhavo/2.js",
-        "/build/enhavo/vendors~action~enhavo/app/view~grid~main~view~vue.js",
-        "/build/enhavo/vendors~enhavo/app/view~main~view.js",
-        "/build/enhavo/vendors~enhavo/app/view~view.js",
-        "/build/enhavo/enhavo/app/view.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/0.4a0f46a4.js",
+        "/build/enhavo/2.2aee3c84.js",
+        "/build/enhavo/enhavo/app/view.ddaa8b7d.js"
       ]
     },
     "enhavo/dashboard/dashboard": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/dashboard/dashboard.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/dashboard/dashboard.5e7d7ec7.js"
       ]
     },
     "enhavo/form/editor": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/enhavo/form/editor.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/enhavo/form/editor.27ecee11.js"
       ],
       "css": [
-        "/build/enhavo/enhavo/form/editor.css"
+        "/build/enhavo/enhavo/form/editor.6a8c8b6c.css"
       ]
     },
     "enhavo/media/image-cropper": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/media/image-cropper.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/media/image-cropper.6b4d4dcf.js"
       ]
     },
     "enhavo/media/media-library": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/enhavo/media/media-library.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/media/media-library.02fdf6f4.js"
       ]
     },
     "enhavo/user/login": {
       "js": [
-        "/build/enhavo/runtime.js",
-        "/build/enhavo/3.js",
-        "/build/enhavo/vendors~enhavo/app/delete~enhavo/app/form~enhavo/app/index~enhavo/app/list~enhavo/app/main~enhavo/ap~5e755b85.js",
-        "/build/enhavo/vendors~enhavo/user/login.js",
-        "/build/enhavo/enhavo/user/login.js"
+        "/build/enhavo/runtime.5561c277.js",
+        "/build/enhavo/4.c856e291.js",
+        "/build/enhavo/3.608449f9.js",
+        "/build/enhavo/enhavo/user/login.7b1a7dd3.js"
       ],
       "css": [
-        "/build/enhavo/3.css",
-        "/build/enhavo/vendors~enhavo/user/login.css"
+        "/build/enhavo/4.19611901.css",
+        "/build/enhavo/enhavo/user/login.4f751e3e.css"
       ]
     }
   }

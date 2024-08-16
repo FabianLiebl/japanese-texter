@@ -3,7 +3,7 @@
     "base": {
       "js": [
         "/build/theme/runtime.js",
-        "/build/theme/vendors~base.js",
+        "/build/theme/0.js",
         "/build/theme/base.js"
       ],
       "css": [
