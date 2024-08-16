@@ -1,0 +1,19 @@
+import:
+    - vendor/enhavo/deployer/recipe/enhavo.php
+    - vendor/enhavo/deployer/recipe/wai.php
+
+config:
+    repository: "ssh://git@github.com/FabianLiebl/japanese-texter.git"
+    default_branch: master
+    bin/php: /usr/bin/php74
+    keep_releases: 2
+    writable_mode: chmod
+
+hosts:
+    prod:
+        hostname: v1089654.kasserver.com
+        remote_user: ssh-w01a4a20
+        deploy_path: /www/htdocs/w01a4a20/japanese-texter.start-page.de
+        labels:
+            target: prod
+            type: kas
