@@ -145,15 +145,17 @@ class TrainingManager
     {
         $allLetters = [];
         foreach($training->getLetters() as $letter) {
-            if ($sound) {
-                $value = $letter->getLetter()->getSound();
-                $correctValue = $correct->getLetter()->getSound();
-            } else {
-                $value = $letter->getLetter()->getLetter();
-                $correctValue = $correct->getLetter()->getLetter();
-            }
-            if ($value !== $correctValue) {
-                $allLetters []= $letter;
+            if ($letter->isActive()) {
+                if ($sound) {
+                    $value = $letter->getLetter()->getSound();
+                    $correctValue = $correct->getLetter()->getSound();
+                } else {
+                    $value = $letter->getLetter()->getLetter();
+                    $correctValue = $correct->getLetter()->getLetter();
+                }
+                if ($value !== $correctValue) {
+                    $allLetters []= $letter;
+                }
             }
         }
 

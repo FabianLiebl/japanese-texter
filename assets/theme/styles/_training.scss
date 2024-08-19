@@ -375,6 +375,21 @@
   }
 }
 
+@media all and (max-width: 425px) {
+  .training {
+    .training-container {
+      .sheets {
+        .sheet {
+          .choices-container {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media all and (max-width: 359px) {
   .training-list-letters {
     .list-letters-container{
